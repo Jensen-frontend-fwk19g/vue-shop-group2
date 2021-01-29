@@ -8,18 +8,7 @@
         v-for="dog in dogs" 
         :key="dog.chipNumber" 
         :dog="dog"/>
-             <section class="card-item">Card</section>
 
-     <section class="card-item">Card</section>
-     <section class="card-item">Card</section>
-     <section class="card-item">Card</section>
-     <section class="card-item" >Card</section>
-     <section class="card-item">Card</section>
-     <section class="card-item">Card</section>
-     <section class="card-item">Card</section>
-     <section class="card-item">Card</section>
-     <section class="card-item">Card</section>
-     
     </article>
 
   </section>
