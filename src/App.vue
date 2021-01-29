@@ -1,10 +1,25 @@
 <template>
   <div id="nav">
     <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link to="/about">Cart</router-link>
+    <router-view :dogs="dogs" />
   </div>
-  <router-view/>
 </template>
+
+
+
+
+<script>
+import dogs from '@/assets/dogs.json'
+
+export default {
+  data() {
+    return {
+      dogs: dogs
+    }
+  },
+}
+</script>
 
 <style>
 #app {
