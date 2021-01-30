@@ -5,7 +5,6 @@
     </header>
     <article class="container">
      <ProductCard
-     class="card-item" 
         v-for="dog in dogs" 
         :key="dog.chipNumber" 
         :dog="dog"/>

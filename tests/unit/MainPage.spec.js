@@ -16,7 +16,7 @@ describe("MainPage", () => {
 
   it('shoud, when the page is mounted, shows all of the elements card-item ', async () => {
     
-    const wrapper = await shallowMount(MainPage, {
+    const wrapper = await mount(MainPage, {
       propsData: {
           dogs: [ 
             {
@@ -33,20 +33,20 @@ describe("MainPage", () => {
        
       }
     })
-    const cardItem = wrapper.find(".card-item");
+    const cardItem = wrapper.find(".card");
 
     expect(cardItem.exists()).toBe(true);
 
   })
   it('show, when the page is mounted, shows 10 elements card-item', async () => {
-    const wrapper = await shallowMount(MainPage, {
+    const wrapper = await mount(MainPage, {
       propsData: {
           dogs: dogs
        
       }
     })
     const expected = dogs.length;
-    const cardItems = wrapper.findAll('.card-item')
+    const cardItems = wrapper.findAll('.card')
     const actualAmount = cardItems.length
     
     expect(actualAmount).toBe(expected) 
