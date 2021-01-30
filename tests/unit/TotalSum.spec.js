@@ -3,7 +3,7 @@ import TotalSum from "@/components/TotalSum.vue";
 
 describe('TotalSum.vue', () => {
 
-	it('it should display "Total sum" when component mounted', () => {
+	it('should display "Total sum" when component mounted', () => {
         // arrange
         const wrapper = shallowMount(TotalSum)
 		const expected = 'Total sum'
@@ -15,29 +15,33 @@ describe('TotalSum.vue', () => {
         expect(actual).toBe(expected)
 	})
 
-    it('it should display total sum value 0 if no products in cart', () => {
+    it('should display total sum value 0 if no products in cart', async () => {
         // arrange
         const expectedCartOrders = 0
         const expectedTotalSum = 0
 
         const wrapper = shallowMount(TotalSum)
-        wrapper.setData({ totalSum: 0,        
+         wrapper.setData({ cart: [], sum : 0       
         })
 
         // act
-        const actualCartOrders = wrapper.vm.cartOrders.length
-        const actualTotalSum = wrapper.vm.totalSum
+        const actualCartOrders = wrapper.vm.cart.length
+        const actualTotalSum = wrapper.vm.sum
 
         // assert
         expect(actualCartOrders).toBe(expectedCartOrders)
         expect(actualTotalSum).toBe(expectedTotalSum)
 	})
 
-    it('it should display the correct total sum if there is products in cart', () => {
+    it('should display the correct total sum if there is products in cart', () => {
 		// arrange
+        const wrapper = shallowMount(TotalSum)
+        const expectedTotalSum = 1000
 
-		// act
-		
-		// assert
+        // act
+        const actualSum = parseInt(wrapper.find("p").text())
+
+        // assert
+        expect(actualSum).toBe(expectedTotalSum);
 	})
 })

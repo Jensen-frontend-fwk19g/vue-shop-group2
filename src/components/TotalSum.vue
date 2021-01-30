@@ -1,6 +1,8 @@
 <template>
-        <h1>Total sum
-        </h1>
+    <div>
+        <h1>Total sum</h1>
+        <p>{{ computedSum }}</p>
+    </div>
 </template>
 
 <script>
@@ -8,9 +10,27 @@ export default {
     name: "TotalSum",
     
     data: () => ({
-        totalSum: 0,
-        cartOrders: []   
+        cartOrders: [
+                {
+                    product: "A",
+                    price: 100
+                }, 
+                {
+                    product: "B",
+                    price: 900
+                },
+        ]   
          }),
+
+    computed: {
+        computedSum() {
+        let sum = 0
+        this.cartOrders.forEach(order => {
+            sum += order.price
+        });
+            return sum;
+        }
+    }
 
 }
 </script>
