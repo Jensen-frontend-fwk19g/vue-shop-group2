@@ -15,7 +15,8 @@ import dogs from '@/assets/dogs.json'
 export default {
   data() {
     return {
-      dogs: dogs
+      dogs: dogs,
+      cartItems: ""
     }
   },
 }

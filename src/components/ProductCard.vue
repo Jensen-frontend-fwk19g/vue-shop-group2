@@ -5,6 +5,8 @@
       <p class="dog-breed">Breed: {{dog.breed}}</p>
       <p class="dog-age">Age: {{dog.age}}</p>
       <p class="dog-sex">Sex: {{dog.sex}}</p>
+      <p class="dog-price">Price: {{dog.price}}:-</p>
+      <button>Add to Card</button>
 
   </section>
 </template>

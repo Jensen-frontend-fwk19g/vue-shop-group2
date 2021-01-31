@@ -1,7 +1,11 @@
+
 import { mount, shallowMount } from "@vue/test-utils";
 
-import MainPage from "@/components/MainPage.vue";
 import ProductCard from "@/components/ProductCard.vue";
+import MainPage from "@/components/MainPage.vue";
+import dogs from '@/assets/dogs.json'
+
+
 
 describe("MainPage", () => {
   it("should,when the page is mounted, display the title of the page `Home` ", () => {
@@ -9,8 +13,31 @@ describe("MainPage", () => {
     const expected = "Toddler shop";
     const actual = wrapper.find(".title").text();
 
+
     expect(actual).toBe(expected);
   });
+
+  it('shoud, when the page is mounted, shows all of the elements card-item ', async () => {
+    
+    const wrapper = await mount(MainPage, {
+      propsData: {
+          dogs: [ 
+            {
+              name:"DogName",
+              sex:"testSex",
+              breed:"someBreed",
+              img:"https://images.dog.ceo/someCoolDog.jpg",
+              present:false,
+              age:10,
+              chipNumber:"QAH994994",
+              price: 1337
+           }
+          ]
+       
+      }
+    })
+    const cardItem = wrapper.find(".card");
+
 
   it("shoud, when the page is mounted, shows all of the elements card-item ", () => {
     const wrapper = mount(MainPage);
@@ -18,11 +45,25 @@ describe("MainPage", () => {
     expect(cardItem).toBeTruthy;
   });
 
+
   it("show, when the page is mounted, shows 78 elements card-item", () => {
     const wrapper = mount(MainPage);
     const expected = 78;
     const cardItems = wrapper.findComponent(ProductCard).findAll('.card');
     const actualAmount = cardItems.length;
+
+  })
+  it('show, when the page is mounted, shows 10 elements card-item', async () => {
+    const wrapper = await mount(MainPage, {
+      propsData: {
+          dogs: dogs
+       
+      }
+    })
+    const expected = dogs.length;
+    const cardItems = wrapper.findAll('.card')
+    const actualAmount = cardItems.length
+
     
     expect(actualAmount).toBe(expected);
   });
