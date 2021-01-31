@@ -1,6 +1,8 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
+  <div class="">
+    <hr>
+    <h1>Cart</h1>
+    <hr>
       <Cart/>
   </div>
 </template>
