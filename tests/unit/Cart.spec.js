@@ -108,4 +108,15 @@ describe('Cart.vue', () => {
     expect(actual).toBe(true);
   });
 
+    /**
+   * As a customer I want to have some colors on the website i look at
+   * ==============================================================================================  
+   */
+  it('should checks DOM color-style by accessing wrapper element',()=>{
+    const wrapper   = shallowMount(Cart);
+    const actual    = wrapper.find('tfoot').element.style.color;
+    const expected  = 'rgb(2, 2, 2)';
+    expect(actual).toBe(expected);
+  });
+
 })

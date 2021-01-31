@@ -34,7 +34,7 @@
                 <tr v-else></tr>
                 
         </tbody>
-        <tfoot>
+        <tfoot style="color:rgb(2, 2, 2);">
                 <tr>
                   <td style="width:30%;"><br><b>Sum</b></td>
                   <td></td>
