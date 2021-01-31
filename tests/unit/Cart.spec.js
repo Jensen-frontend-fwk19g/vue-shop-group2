@@ -31,7 +31,13 @@ describe('Cart.vue', () => {
     const actual    = wrapper.find('.deleteBtn').text();
     const expected  = '✗';
     expect(actual).toBe(expected);
-    console.log('✗: = ', actual);
+  });
+  it('should decrease the items in cart when the user click on the [X] button.', async () => {
+    const wrapper   = shallowMount(Cart);
+    const expected  = wrapper.vm.cart.length -1;
+    await wrapper.find('.deleteBtn').trigger('click');
+    const actual    = wrapper.find('.item-in-cart-cls').text();
+    expect(parseInt(actual)).toBe(expected);
   });
 
   /**
