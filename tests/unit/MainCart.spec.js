@@ -8,16 +8,17 @@ describe("MainCart.vue", () => {
     const wrapper = shallowMount(About);
     const HtmlHeader = wrapper.find("header").html();
 
-    const expectedHtml = "<header><h1>Cart Page you can find all the dogs you are going to pay</h1></header>";
-    expect(expectedHtml).toEqual(HtmlHeader)
+    const expectedHtml =
+      "<header><h1>Cart Page you can find all the dogs you are going to pay</h1></header>";
+    expect(expectedHtml).toEqual(HtmlHeader);
   });
-  it('should, when the page is mounted, find if it exist a child component Cart', () => {
+  it("should, when the page is mounted, find if it exist a child component Cart", () => {
     const wrapper = mount(MainCart, {
       stubs: {
-        Cart: true
-      }
-    })
-    const CartComponent = wrapper.find(Cart)
-    expect(CartComponent.exists()).toBe(true)
-  })
+        Cart: true,
+      },
+    });
+    const CartComponent = wrapper.findComponent(Cart);
+    expect(CartComponent.exists()).toBe(true);
+  });
 });

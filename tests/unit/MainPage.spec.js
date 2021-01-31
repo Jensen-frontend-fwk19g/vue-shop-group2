@@ -41,14 +41,7 @@ describe("MainPage", () => {
     expect(cardItem).toBeTruthy;
   });
 
-  it("show, when the page is mounted, shows 78 elements card-item", () => {
-    const wrapper = mount(MainPage);
-    const expected = 78;
-    const cardItems = wrapper.findComponent(ProductCard).findAll(".card");
-    const actualAmount = cardItems.length;
-    expect(expected).toBe(actualAmount);
-  });
-  it("show, when the page is mounted, shows 10 elements card-item", async () => {
+  it("show, when the page is mounted, shows all the elements card-item", async () => {
     const wrapper = await mount(MainPage, {
       propsData: {
         dogs: dogs,
