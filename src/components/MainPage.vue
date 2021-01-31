@@ -4,21 +4,11 @@
       <h1 class="title">Toddler shop</h1>
     </header>
     <article class="container">
-     <ProductCard 
+     <ProductCard
         v-for="dog in dogs" 
         :key="dog.chipNumber" 
         :dog="dog"/>
-             <section class="card-item">Card</section>
-
-     <section class="card-item">Card</section>
-     <section class="card-item">Card</section>
-     <section class="card-item">Card</section>
-     <section class="card-item" >Card</section>
-     <section class="card-item">Card</section>
-     <section class="card-item">Card</section>
-     <section class="card-item">Card</section>
-     <section class="card-item">Card</section>
-     <section class="card-item">Card</section>
+             
      
     </article>
 
@@ -35,9 +25,6 @@ export default {
   name: 'MainPage',
   components: {
     ProductCard
-  },
-  data() {
-
   },
   props: {
     dogs: Array
