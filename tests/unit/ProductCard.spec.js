@@ -1,7 +1,4 @@
-
-
-
-import { shallowMount, mount } from "@vue/test-utils";
+import { shallowMount } from "@vue/test-utils";
 import Product from "@/components/ProductCard.vue";
 
 

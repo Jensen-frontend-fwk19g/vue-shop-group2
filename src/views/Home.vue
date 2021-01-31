@@ -3,6 +3,7 @@
 
     <CartCounter/>
     <MainPage :dogs="dogs" msg="Welcome to Your Vue.js App"/>
+   
   </div>
 </template>
 
@@ -11,10 +12,11 @@
 import MainPage from "@/components/MainPage"
 import CartCounter from "@/components/CartCounter"
 
+
 export default {
   name: 'Home',
   components: {
-
+ 
     MainPage,
     CartCounter
   },
