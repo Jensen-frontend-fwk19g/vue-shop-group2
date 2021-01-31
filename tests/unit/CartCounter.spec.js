@@ -45,33 +45,34 @@ describe("CartCounter.vue", () => {
     expect(actualCounter).toBe(expected);
   });
 
-  it("should display the number of items bought in the cardCounter", () => {
-    // arrange
-    const wrapper = shallowMount(CartCounter, {
-      propsData: {
+  it("should display the numbers of items bought in the cardCounter", async () => {
     
-        dogsToBuy: [
-          {
-            dogDescription: "Dalmatin ",
-            price: 400,
-            dataOfBirth: "2015/12/01",
-          },
-          {
-            dogDescription: "Dalmatin ",
-            price: 400,
-            dataOfBirth: "2015/12/01",
-          },
-        ],
+    
+    const wrapper = shallowMount(CartCounter);
+    const fakeData =  [
+      {
+        dogDescription: "Dalmatin ",
+        price: 400,
+        dataOfBirth: "2015/12/01",
       },
-    });
-    
-    
-    //act 
-    const actualItems = wrapper.find('.counter').text()
-    
-    
-    //assert 
-    expect(actualItems).toBe(expectedAmountItems);
+      {
+        dogDescription: "Dalmatin ",
+        price: 400,
+        dataOfBirth: "2015/12/01",
+      },
+    ]
+
+        const arrayLength = fakeData.length
+
+        // Act
+         await wrapper.setData({
+            counter: arrayLength
+        });
+
+        const actualItems = parseInt(wrapper.find('.counter').text())
+
+        // Assert
+        expect(actualItems).toBe(arrayLength);
   
   });
 

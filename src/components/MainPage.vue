@@ -8,7 +8,7 @@
         v-for="dog in dogs" 
         :key="dog.chipNumber" 
         :dog="dog"/>
-             
+
      
     </article>
 
