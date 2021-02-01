@@ -3,10 +3,16 @@
       <img class="dog-image" :src="dog.img" alt="">
       <p class="dog-name">Name: {{dog.name}}</p>
       <p class="dog-breed">Breed: {{dog.breed}}</p>
-      <p class="dog-age">Age: {{dog.age}}</p>
-      <p class="dog-sex">Sex: {{dog.sex}}</p>
-      <p class="dog-price">Price: {{dog.price}}:-</p>
-      <button>Add to Card</button>
+
+        <section class="flex-container box-line">
+        <p class="dog-age">Age: {{dog.age}}</p>
+        <p class="dog-sex">Sex: {{dog.sex}}</p>
+        </section>
+        
+        <section class="flex-container box-line">
+        <span class="dog-price">Price: {{dog.price}}:-</span>
+        <button>Add to Card</button>
+        </section>
 
   </section>
 </template>
