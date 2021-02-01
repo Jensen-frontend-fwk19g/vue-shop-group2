@@ -1,7 +1,7 @@
 <template>
   <section id="counter-cart">
     <figure>
-      <div class="counter">{{counter}}</div>
+      <div class="counter">{{dogArray.length}}</div>
       <img class="bag" src="@/assets/bag.png" alt="Cart">
     </figure>
       <button @click="incremet()" class="add"></button>
@@ -17,6 +17,10 @@ export default {
        
     }
   },
+
+  props: {
+    dogArray: Array
+  },
   
   methods: {
     incremet(){
@@ -27,15 +31,7 @@ export default {
       }
 },
 
-  computed:{
-    // totalItems(){
-    //   // console.log('dogs to buy ', this.dogsToBuy.length)
-    //   this.counter = this.dogsToBuy.length
-    //  return this.counter
-     
-    // }
-  }
-
+  
 }
 </script>
 

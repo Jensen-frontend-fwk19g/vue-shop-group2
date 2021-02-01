@@ -1,8 +1,8 @@
 <template>
-  <div class="home" @dogToEmit="dogToBuyArray">
+  <div class="home">
 
-    <CartCounter :dogsCounter="numberOfDogs" />
-    <MainPage :dogs="dogs" msg="Welcome to Your Vue.js App"/>
+    <CartCounter  :dogArray="dogArray" />
+    <MainPage  @dogEmit="pushToDogArray" :dogs="dogs" msg="Welcome to Your Vue.js App"/>
    
   </div>
 </template>
@@ -21,6 +21,14 @@ export default {
     MainPage,
     CartCounter
   },
+
+    data () {
+    return {
+       dogArray: []
+
+    }
+  },
+
   props: {
     dogs: Array,
     dog:Object,
@@ -30,7 +38,9 @@ export default {
   },
 
   methods:{
-   
+   pushToDogArray(dog) {
+    this.dogArray.push(dog);
+    }
   }
   
 }

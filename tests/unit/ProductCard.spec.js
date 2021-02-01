@@ -1,12 +1,12 @@
 import { shallowMount, mount } from "@vue/test-utils";
-import Product from "@/components/ProductCard.vue";
 import ProductCard from "@/components/ProductCard.vue";
+import MainPage from "@/components/MainPage.vue";
 
 
 
 describe('ProductCard.vue', () => {
 
-	it('it should display a name', async () => {
+/*	it('it should display a name', async () => {
 		// arrange
 		const wrapper = await shallowMount(Product, {
             propsData: {
@@ -104,23 +104,20 @@ describe('ProductCard.vue', () => {
         expect(actual.attributes('src')).toBe(expected)
 
     })
+*/
     it('should emit the dog chosen ', async () => {
-        
-        // //arrange
-    //   const wrapper = mount(ProductCard, {
-    //     propsData: {
-    //       name: "Molly",
-    //     },
-    //   })
-     const wrapper = shallowMount(ProductCard)
-        // //act
-         wrapper.vm.$emit('dogToEmit')
+        //arrange
+        const wrapper = mount(MainPage)
 
-         await wrapper.vm.$nextTick()
-        // //assert
+        // act
+        wrapper.vm.$emit('dogToEmit', 123)
+        await wrapper.vm.$nextTick() // Wait until $emits have been handled
 
+        // assert
        expect(wrapper.emitted().dogToEmit).toBeTruthy();
-       //expect(wrapper.emitted().dogToEmit[0]).toEqual([{name:'Molly'}]);
+       expect(wrapper.emitted().dogToEmit.length).toBe(1)
+       expect(wrapper.emitted().dogToEmit[0]).toEqual([123])
+
     })
 
 })
