@@ -5,7 +5,6 @@
     </header>
     <article class="container">
      <ProductCard
-     
         v-for="dog in dogs" 
         :key="dog.chipNumber" 
         :dog="dog"/>
@@ -24,6 +23,11 @@ import ProductCard from '@/components/ProductCard.vue'
 
 export default {
   name: 'MainPage',
+  data() {
+    return {
+      dogData:{}
+    }
+  },
 
   components: {
     ProductCard
@@ -31,6 +35,9 @@ export default {
   props: {
     dogs: Array,
    
+   
+  },
+  methods: {
    
   },
   

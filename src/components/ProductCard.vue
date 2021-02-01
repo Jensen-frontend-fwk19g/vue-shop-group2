@@ -4,6 +4,7 @@
       <p class="dog-name">Name: {{dog.name}}</p>
       <p class="dog-breed">Breed: {{dog.breed}}</p>
 
+
         <section class="flex-container box-line">
         <p class="dog-age">Age: {{dog.age}}</p>
         <p class="dog-sex">Sex: {{dog.sex}}</p>
@@ -20,6 +21,7 @@
         </section>
 
 
+
   </section>
 </template>
 
@@ -33,15 +35,13 @@ export default {
     },
     data() {
         return {
-            dogToBuy:{}
+           
+                dogData:this.dog
+            
         }
     },
     methods:{
-        // dogToEmit(){
-        //     this.dogToBuy = this.dog
-        //     console.log('dog to buy',this.dog)
-        //     this.$emit('dogToEmit',this.dogToBuy)
-        // }
+       
     }
     
 }
