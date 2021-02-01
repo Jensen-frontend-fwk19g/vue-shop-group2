@@ -4,6 +4,12 @@
       <p class="dog-name">Name: {{dog.name}}</p>
       <p class="dog-breed">Breed: {{dog.breed}}</p>
 
+      <p class="dog-age">Age: {{dog.age}}</p>
+      <p class="dog-sex">Sex: {{dog.sex}}</p>
+      <p class="dog-price">Price: {{dog.price}}:-</p>
+      <button @click="dogEmit">Add to Cart</button>
+
+
 
         <section class="flex-container box-line">
         <p class="dog-age">Age: {{dog.age}}</p>
@@ -22,6 +28,7 @@
 
 
 
+
   </section>
 </template>
 
@@ -33,17 +40,19 @@ export default {
     props: {
         dog: Object
     },
-    data() {
-        return {
-           
-                dogData:this.dog
-            
-        }
-    },
-    methods:{
-       
-    }
+
+   
+
+
+    methods: {
+         dogEmit(){
+             this.$emit('dogEmit', this.dog )
+         }
+
     
+    
+
+
 }
 </script>
 

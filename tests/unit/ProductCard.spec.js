@@ -1,5 +1,9 @@
 import { shallowMount, mount } from "@vue/test-utils";
+
+import ProductCard from "@/components/ProductCard.vue";
+
 import Product from "@/components/ProductCard.vue";
+
 import MainPage from "@/components/MainPage.vue";
 
 describe("ProductCard.vue", () => {
@@ -35,9 +39,27 @@ describe("ProductCard.vue", () => {
     const actual = await wrapper.find(".dog-age");
     const actualText = await actual.text();
 
-    // assert
-    expect(actualText).toMatch(expected);
+
+/*	it('it should display a name', async () => {
+		// arrange
+		const wrapper = await shallowMount(Product, {
+            propsData: {
+                dog: {
+                    name: "Molly"
+                }
+             
+            }
+          })
+		const expected = "Molly";
+		// act
+        const actual = await wrapper.find('.dog-name')
+        const actualText = await actual.text()
+        
+        // assert
+        expect(actualText).toMatch(expected)
+
   });
+
 
   it("it should display a breed", async () => {
     // arrange
@@ -146,32 +168,28 @@ describe("ProductCard.vue", () => {
         expect(acualExist).toBeTruthy;
         expect(actual.attributes("class")).toMatch("price-font")
     })
+
 })
 
+
     it('should emit the dog chosen ', async () => {
-        
-        // //arrange
-    //   const wrapper = mount(ProductCard, {
-    //     propsData: {
-    //       name: "Molly",
-    //     },
-    //   })
-     const wrapper = shallowMount(ProductCard)
-        // //act
-         wrapper.vm.$emit('dogToEmit')
+        //arrange
+        const wrapper = mount(MainPage)
+
+        // act
+        wrapper.vm.$emit('dogToEmit', 123)
+        await wrapper.vm.$nextTick() // Wait until $emits have been handled
 
 
-         await wrapper.vm.$nextTick()
-        // //assert
-
+        // assert
        expect(wrapper.emitted().dogToEmit).toBeTruthy();
-       //expect(wrapper.emitted().dogToEmit[0]).toEqual([{name:'Molly'}]);
+       expect(wrapper.emitted().dogToEmit.length).toBe(1)
+       expect(wrapper.emitted().dogToEmit[0]).toEqual([123])
+
     })
 
 })
 
-    expect(wrapper.emitted().dogToEmit).toBeTruthy();
-    expect(wrapper.emitted().dogToEmit[1][0]).toEqual({name:'Molly'});
-    //expect(wrapper.emitted().dogToEmit[0]).toEqual([{name:'Molly'}]);
-  });
+   
+
 });
