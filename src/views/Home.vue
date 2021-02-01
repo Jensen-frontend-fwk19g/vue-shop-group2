@@ -2,7 +2,7 @@
   <div class="home" @dogToEmit="dogToBuyArray">
 
     <CartCounter :dogsCounter="numberOfDogs" />
-    <MainPage :dogs="dogs" msg="Welcome to Your Vue.js App"/>
+    <MainPage :dogs="dogs" msg="Welcome to Your Vue.js App" @dogToEmit="dogToBuyArray"/>
    
   </div>
 </template>
@@ -15,6 +15,11 @@ import CartCounter from "@/components/CartCounter"
 
 export default {
   name: 'Home',
+  data() {
+    return {
+      dogsToBuy:[]
+    }
+  },
   
   components: {
  
@@ -30,6 +35,11 @@ export default {
   },
 
   methods:{
+    dogToBuyArray(e){
+      console.log('dog in home', e.dogData)
+      this.dogsToBuy.push(e.dogData)
+    }
+
    
   }
   

@@ -6,7 +6,7 @@
       <p class="dog-age">Age: {{dog.age}}</p>
       <p class="dog-sex">Sex: {{dog.sex}}</p>
       <p class="dog-price">Price: {{dog.price}}:-</p>
-      <button @click="$emit('dogToEmit',this.dog)">Add to Cart</button>
+      <button @click="$emit('dogToEmit', {dog})">Add to Cart</button>
 
   </section>
 </template>
@@ -21,14 +21,16 @@ export default {
     },
     data() {
         return {
-            dogToBuy:{}
+           
+                dogData:this.dog
+            
         }
     },
     methods:{
         // dogToEmit(){
-        //     this.dogToBuy = this.dog
-        //     console.log('dog to buy',this.dog)
-        //     this.$emit('dogToEmit',this.dogToBuy)
+        //     this.dogData = this.dog
+        //     console.log('dog to buy', this.dogData)
+        //     this.$emit('dogToEmit',this.dogData)
         // }
     }
     
