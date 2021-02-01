@@ -7,7 +7,7 @@ import dogs from "@/assets/dogs.json";
 describe("MainPage", () => {
   it("should,when the page is mounted, display the title of the page `Home` ", () => {
     const wrapper = shallowMount(MainPage);
-    const expected = "Toddler shop";
+    const expected = "Dogs Center";
     const actual = wrapper.find(".title").text();
 
     expect(actual).toBe(expected);

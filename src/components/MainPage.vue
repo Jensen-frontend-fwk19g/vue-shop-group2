@@ -1,7 +1,7 @@
 <template>
   <section id="main-page">
     <header>
-      <h1 class="title">Toddler shop</h1>
+      <h1 class="title">Dogs Center</h1>
     </header>
     <article class="container">
      <ProductCard
@@ -23,15 +23,24 @@ import ProductCard from '@/components/ProductCard.vue'
 
 export default {
   name: 'MainPage',
+  data() {
+    return {
+      dogData:{}
+    }
+  },
+
   components: {
     ProductCard
   },
   props: {
-    dogs: Array
+    dogs: Array,
+   
+   
   },
   methods: {
-
-  }
+   
+  },
+  
 }
 </script>
 
