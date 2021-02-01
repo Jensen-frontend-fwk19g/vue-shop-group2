@@ -104,6 +104,26 @@ describe('ProductCard.vue', () => {
         expect(actual.attributes('src')).toBe(expected)
 
     })
+
+    
+    it("should display price with a font css class", async () => {
+        const wrapper = await shallowMount(Product, {
+            propsData: {
+                dog: {
+                    price: 1337
+                }
+             
+            }
+          })
+        // takes the price element
+        const actual = wrapper.find('.dog-price');
+        const acualExist = actual.exists()
+        //checks if 
+        expect(acualExist).toBeTruthy;
+        expect(actual.attributes("class")).toMatch("price-font")
+    })
+})
+
     it('should emit the dog chosen ', async () => {
         
         // //arrange
@@ -115,6 +135,7 @@ describe('ProductCard.vue', () => {
      const wrapper = shallowMount(ProductCard)
         // //act
          wrapper.vm.$emit('dogToEmit')
+
 
          await wrapper.vm.$nextTick()
         // //assert
