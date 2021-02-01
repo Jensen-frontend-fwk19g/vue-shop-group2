@@ -2,7 +2,9 @@
   <div id="nav">
     <router-link to="/">Home</router-link> |
     <router-link to="/about">Cart</router-link>
-    <router-view :cart="cartItems" :dogs="dogs" />
+
+    <router-view :dogs="dogs"/>
+
   </div>
 </template>
 
@@ -19,6 +21,7 @@ export default {
       cartItems: ""
     }
   },
+  
 }
 </script>
 

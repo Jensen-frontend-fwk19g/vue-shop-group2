@@ -19,6 +19,7 @@
         </div>
         </section>
 
+
   </section>
 </template>
 
@@ -30,6 +31,18 @@ export default {
     props: {
         dog: Object
     },
+    data() {
+        return {
+            dogToBuy:{}
+        }
+    },
+    methods:{
+        // dogToEmit(){
+        //     this.dogToBuy = this.dog
+        //     console.log('dog to buy',this.dog)
+        //     this.$emit('dogToEmit',this.dogToBuy)
+        // }
+    }
     
 }
 </script>
