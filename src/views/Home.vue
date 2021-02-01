@@ -1,7 +1,7 @@
 <template>
-  <div class="home">
+  <div class="home" @dogToEmit="dogToBuyArray">
 
-    <CartCounter/>
+    <CartCounter :dogsCounter="numberOfDogs" />
     <MainPage :dogs="dogs" msg="Welcome to Your Vue.js App"/>
    
   </div>
@@ -15,15 +15,23 @@ import CartCounter from "@/components/CartCounter"
 
 export default {
   name: 'Home',
+  
   components: {
  
     MainPage,
     CartCounter
   },
   props: {
-    dogs: Array
+    dogs: Array,
+    dog:Object,
+
+    
 
   },
+
+  methods:{
+   
+  }
   
 }
 </script>
