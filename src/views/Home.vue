@@ -2,7 +2,7 @@
   <div class="home" @dogToEmit="dogToBuyArray">
 
     <CartCounter :dogsCounter="numberOfDogs" />
-    <MainPage :dogs="dogs" msg="Welcome to Your Vue.js App" @dogToEmit="dogToBuyArray"/>
+    <MainPage :dogs="dogs" msg="Welcome to Your Vue.js App" />
    
   </div>
 </template>
@@ -35,10 +35,7 @@ export default {
   },
 
   methods:{
-    dogToBuyArray(e){
-      console.log('dog in home', e.dogData)
-      this.dogsToBuy.push(e.dogData)
-    }
+    
 
    
   }

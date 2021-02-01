@@ -5,7 +5,6 @@
     </header>
     <article class="container">
      <ProductCard
-        @dogToEmit="$emit(dogToEmit, this.dog)"
         v-for="dog in dogs" 
         :key="dog.chipNumber" 
         :dog="dog"/>
@@ -39,11 +38,7 @@ export default {
    
   },
   methods: {
-    // listenToDog(e){
-    //   this.dogData = e.dogData
-    //   console.log('dog in main Page', e.dogData)
-    //   this.$emit('dogToEmit', this.dogDa)
-    // }
+   
   },
   
 }

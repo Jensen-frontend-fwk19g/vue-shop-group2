@@ -1,6 +1,5 @@
 import { shallowMount, mount } from "@vue/test-utils";
 import Product from "@/components/ProductCard.vue";
-import ProductCard from "@/components/ProductCard.vue";
 import MainPage from "@/components/MainPage.vue";
 
 describe("ProductCard.vue", () => {
