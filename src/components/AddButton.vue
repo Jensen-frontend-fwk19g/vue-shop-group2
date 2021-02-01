@@ -16,19 +16,14 @@ export default {
         btnID: ""
     }),
 
-    /* Get the database with all product objects 
-       props: {
-        },
-    */
+    props: {
+        dog: Object
+    },
 
     methods: {
         addToCart() {
             this.btnText = "Added to cart"
-
-        /* Get id from product object in database, assign it
-            this.btnID = 
-        */
-
+            this.btnID =  this.dog.chipNumber
         }
     }
 }

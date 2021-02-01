@@ -7,7 +7,7 @@
       <p class="dog-age">Age: {{dog.age}}</p>
       <p class="dog-sex">Sex: {{dog.sex}}</p>
       <p class="dog-price">Price: {{dog.price}}:-</p>
-      <button @click="dogEmit">Add to Cart</button>
+      <AddButton  @click="dogEmit" :dog="dogData" />
 
 
 
@@ -33,7 +33,7 @@
 </template>
 
 <script>
-
+import AddButton from "@/components/AddButton"
 
 export default {
     name: "productCard",
@@ -41,23 +41,25 @@ export default {
         dog: Object
     },
 
-   
+    data () {
+        return {
+            dogData: this.dog
+        }
+    },
 
+   components: {
+       AddButton
+   },
 
     methods: {
          dogEmit(){
-             this.$emit('dogEmit', this.dog )
+             this.$emit('dogEmit', this.dog )             
          }
-
-    
-    
-
-
+    }
 }
 </script>
 
 <style scoped>
-
 .card {
     width: 260;
     height: 300;
