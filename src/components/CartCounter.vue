@@ -13,13 +13,11 @@
 export default {
   data() {
     return {
-      counter :0,
+       counter :0,
        
     }
   },
-  props:{
-   dogsToBuy:Array
-  },
+  
   methods: {
     incremet(){
       this.counter++
