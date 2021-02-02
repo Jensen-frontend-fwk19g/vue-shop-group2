@@ -14,7 +14,7 @@ describe('ShoppingCart.vue', () => {
   it('Should not show text "shopping cart is empty" if items are added', () => {
     const wrapper = shallowMount(ShoppingCart, {
       propsData: {
-        cartItems: getCartItemsMock()
+        cartItems: getCartItemsFake()
       }
     });
 
@@ -24,7 +24,7 @@ describe('ShoppingCart.vue', () => {
   it('Should show product list if it is not empty', () => {
     const wrapper = shallowMount(ShoppingCart, {
       propsData: {
-        cartItems: getCartItemsMock()
+        cartItems: getCartItemsFake()
       }
     });
     expect(wrapper.find('.shopping-cart-list').exists()).toBe(true);
@@ -40,7 +40,7 @@ describe('ShoppingCart.vue', () => {
   });
 });
 
-function getCartItemsMock() {
+function getCartItemsFake() {
   return [{
     "name": "DOGE",
     "sex": "unknown",
