@@ -1,11 +1,9 @@
 <template>
   <section id="counter-cart">
     <figure>
-      <div class="counter">{{counter}}</div>
+      <div class="counter">{{numberOfDogs}}</div>
       <img class="bag" src="@/assets/bag.png" alt="Cart">
     </figure>
-      <button @click="incremet()" class="add"></button>
-      <button @click="decrement()" class="dec"></button>
   </section>
 </template>
 
@@ -32,7 +30,7 @@ export default {
   },
   computed:{
     numberOfDogs(){
-      return this.dogArray == this.numbersOfDogs
+      return this.dogArray.length
     }
   }
 }
