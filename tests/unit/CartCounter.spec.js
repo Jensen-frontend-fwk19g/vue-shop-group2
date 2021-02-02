@@ -8,9 +8,11 @@ describe("CartCounter.vue", () => {
     const expectedHtml = '<img class="bag" src="" alt="Cart">';
     //act
     const actualHtml = wrapper.find(".bag").html();
+    console.log(actualHtml)
     //assert
     expect(actualHtml).toBe(expectedHtml);
   });
+
   it("should, when is mounted, disply the value of 0 ", () => {
     //arrange
     const wrapper = shallowMount(CartCounter);
@@ -33,6 +35,7 @@ describe("CartCounter.vue", () => {
     //assert
     expect(actualCounter).toBe(expected);
   });
+
   it("should display the decrement when the dec button is pressed", async () => {
     //arrange
     const expected = 0 - 1;

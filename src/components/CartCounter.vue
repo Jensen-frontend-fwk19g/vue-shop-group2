@@ -1,7 +1,7 @@
 <template>
   <section id="counter-cart">
     <figure>
-      <div class="counter">{{dogArray.length}}</div>
+      <div class="counter">{{counter}}</div>
       <img class="bag" src="@/assets/bag.png" alt="Cart">
     </figure>
       <button @click="incremet()" class="add"></button>
@@ -13,11 +13,10 @@
 export default {
   data() {
     return {
-       counter :0,
+       counter:0,
        
     }
   },
-
   props: {
     dogArray: Array
   },
@@ -28,10 +27,14 @@ export default {
       },
     decrement(){
       this.counter--
-      }
-},
-
-  
+      },
+      
+  },
+  computed:{
+    numberOfDogs(){
+      return this.dogArray == this.numbersOfDogs
+    }
+  }
 }
 </script>
 
@@ -46,7 +49,6 @@ export default {
     justify-content: center;
     flex-flow: column;
     border-radius: 999rem;
-
   }
   .counter{
     position: absolute;
@@ -59,7 +61,6 @@ export default {
     color: aliceblue;
     text-align: center;
     font-weight: 600;
-
   }
 </style>>
 
