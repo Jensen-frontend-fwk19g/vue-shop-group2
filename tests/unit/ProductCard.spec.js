@@ -159,7 +159,7 @@ it("should change data value to true after one button click", () => {
   const btnAdd = wrapper.find(".buy-button");
   btnAdd.trigger("click");
 
-  expect(wrapper.vm.alreadyAdded).toBe(expectedDataValue)
+  expect(wrapper.vm.dogData.disabled).toBe(expectedDataValue)
 })
 });
 

@@ -23,11 +23,17 @@
 <script>
 export default {
     name: "ProductCard",
+    data() {
+        return {
+            dogData: this.dog
+        }
+    },
     props: {
         dog: Object
     },
     methods: {
          dogEmit(){
+             this.dogData.disabled = true;
              this.$emit('dogEmit',this.dog )
          }
     }
