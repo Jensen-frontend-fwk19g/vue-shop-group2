@@ -10,16 +10,13 @@
 <script>
 export default {
     name: "AddButton",
-
     data: () => ({
         btnText: "Add to cart",
         btnID: ""
     }),
-
     props: {
         dog: Object
     },
-
     methods: {
         addToCart() {
             this.btnText = "Added to cart"
@@ -30,5 +27,4 @@ export default {
 </script>
 
 <style scoped>
-
 </style>
