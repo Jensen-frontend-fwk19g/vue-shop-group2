@@ -19,13 +19,12 @@
 <script>
 
 import ShoppingCartItem from "@/components/ShoppingCartItem";
-import TotalSum from "@/components/TotalSum";
+
 
 export default {
   name: "Cart",
   components: {
     ShoppingCartItem,
-    TotalSum
   },
   computed: {
     itemsInCart() {
@@ -35,6 +34,7 @@ export default {
         return 0;
       }
     },
+  },
     props: {
       cartItems: Array,
       dogs: Array
@@ -66,6 +66,7 @@ export default {
       }
     },
   }
+
 </script>
 <style scoped>
 </style>
