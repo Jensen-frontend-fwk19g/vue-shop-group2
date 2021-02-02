@@ -40,6 +40,7 @@ describe('ShoppingCart.vue', () => {
   });
 });
 
+
 function getCartItemsFake() {
   return [{
     "name": "DOGE",
