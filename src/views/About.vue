@@ -5,17 +5,20 @@
     </header>
     <ShoppingCart :dogs="dogs" :cartItems="getCartItems()" />
     <!--      <Cart/>-->
+  <TotalSum :dogs="dogs" />
   </div>
 </template>
 <script>
 // import Cart from '@/components/Cart.vue';
 import ShoppingCart from "@/components/ShoppingCart.vue";
+import TotalSum from "@/components/TotalSum.vue";
 
 export default {
   name: "",
   components: {
     // Cart,
     ShoppingCart,
+    TotalSum
   },
   props: {
     dogs: Array,
