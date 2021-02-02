@@ -1,377 +1,392 @@
 [
-    {
-       "name":"Molly",
-       "sex":"female",
-       "breed":"briard",
-       "img":"https://images.dog.ceo/breeds/briard/n02105251_6840.jpg",
-       "present":false,
-       "age":4,
-       "chipNumber":"IEH455006",
-       "price": 10000,
-       "owner":{
-          "name":"Wilmer",
-          "lastName":"Svensson",
-          "phoneNumber":"0769239356"
-       }
-    },
-    {
-       "name":"Bella",
-       "sex":"female",
-       "breed":"labrador",
-       "img":"https://images.dog.ceo/breeds/labrador/n02099712_3947.jpg",
-       "present":false,
-       "age":1,
-       "chipNumber":"HPF367168",
-       "price": 14000,
-       "owner":{
-          "name":"Tina",
-          "lastName":"Ahlberg",
-          "phoneNumber":"0732303484"
-       }
-    },
-    {
-       "name":"Charlie",
-       "sex":"male",
-       "breed":"retriever",
-       "img":"https://images.dog.ceo/breeds/retriever-chesapeake/n02099849_3645.jpg",
-       "present":true,
-       "age":5,
-       "chipNumber":"DBP669806",
-       "price": 20000,
-       "owner":{
-          "name":"Tina",
-          "lastName":"Hök",
-          "phoneNumber":"0708671977"
-       }
-    },
-    {
-       "name":"Ludde",
-       "sex":"male",
-       "breed":"greyhound",
-       "img":"https://images.dog.ceo/breeds/greyhound-italian/n02091032_907.jpg",
-       "present":true,
-       "age":5,
-       "chipNumber":"HLM936015",
-       "price": 14500,
-       "owner":{
-          "name":"David",
-          "lastName":"Emraz",
-          "phoneNumber":"0762592136"
-       }
-    },
-    {
-       "name":"Doris",
-       "sex":"female",
-       "breed":"groenendael",
-       "img":"https://images.dog.ceo/breeds/groenendael/n02105056_2194.jpg",
-       "present":true,
-       "age":8,
-       "chipNumber":"ELN562847",
-       "price": 4000,
-       "owner":{
-          "name":"David",
-          "lastName":"Ahlberg",
-          "phoneNumber":"0765237613"
-       }
-    },
-    {
-       "name":"Sigge",
-       "sex":"male",
-       "breed":"husky",
-       "img":"https://images.dog.ceo/breeds/husky/n02110185_8860.jpg",
-       "present":false,
-       "age":7,
-       "chipNumber":"HAA378909",
-       "price": 0,
-       "owner":{
-          "name":"Moa",
-          "lastName":"Jonsson",
-          "phoneNumber":"0705896593"
-       }
-    },
-    {
-       "name":"Wilma",
-       "sex":"female",
-       "breed":"akita",
-       "img":"https://images.dog.ceo/breeds/akita/Akita_inu_blanc.jpg",
-       "present":false,
-       "age":6,
-       "chipNumber":"GEL894256",
-       "price": 7000,
-       "owner":{
-          "name":"David",
-          "lastName":"Doner",
-          "phoneNumber":"0705449389"
-       }
-    },
-    {
-       "name":"Bamse",
-       "sex":"male",
-       "breed":"newfoundland",
-       "img":"https://images.dog.ceo/breeds/newfoundland/n02111277_6402.jpg",
-       "present":false,
-       "age":6,
-       "chipNumber":"FAK548352",
-       "price": 18000,
-       "owner":{
-          "name":"Lollo",
-          "lastName":"Emraz",
-          "phoneNumber":"0762550965"
-       }
-    },
-    {
-       "name":"Sally",
-       "sex":"female",
-       "breed":"schnauzer",
-       "img":"https://images.dog.ceo/breeds/schnauzer-miniature/n02097047_157.jpg",
-       "present":false,
-       "age":2,
-       "chipNumber":"JLO423741",
-       "price": 420000,
-       "owner":{
-          "name":"Emma",
-          "lastName":"Kihl",
-          "phoneNumber":"0703474026"
-       }
-    },
-    {
-       "name":"Alice",
-       "sex":"female",
-       "breed":"border collie",
-       "img":"https://images.dog.ceo/breeds/collie-border/n02106166_930.jpg",
-       "present":true,
-       "age":7,
-       "chipNumber":"CFL247788",
-       "price": 1000,
-       "owner":{
-          "name":"Tina",
-          "lastName":"Doner",
-          "phoneNumber":"0762187564"
-       }
-    },
-    {
-       "name":"Ronja",
-       "sex":"female",
-       "breed":"akita",
-       "img":"https://images.dog.ceo/breeds/akita/Akita_Inu_dog.jpg",
-       "present":false,
-       "age":7,
-       "chipNumber":"IID568612",
-       "price": 53000,
-       "owner":{
-          "name":"Anna",
-          "lastName":"Robinson",
-          "phoneNumber":"0708439574"
-       }
-    },
-    {
-       "name":"Rocky",
-       "sex":"male",
-       "breed":"terrier",
-       "img":"https://images.dog.ceo/breeds/terrier-irish/n02093991_1038.jpg",
-       "present":true,
-       "age":1,
-       "chipNumber":"ILN11332",
-       "price": 10000,
-       "owner":{
-          "name":"Lollo",
-          "lastName":"Yahla",
-          "phoneNumber":"0762411432"
-       }
-    },
-    {
-       "name":"Stella",
-       "sex":"female",
-       "breed":"terrier",
-       "img":"https://images.dog.ceo/breeds/terrier-kerryblue/n02093859_1213.jpg",
-       "present":false,
-       "age":5,
-       "chipNumber":"GAH974488",
-       "price": 9000,
-       "owner":{
-          "name":"Axel",
-          "lastName":"Doner",
-          "phoneNumber":"0703887903"
-       }
-    },
-    {
-       "name":"Nova",
-       "sex":"female",
-       "breed":"pomeranian",
-       "img":"https://images.dog.ceo/breeds/pomeranian/n02112018_8161.jpg",
-       "present":true,
-       "age":1,
-       "chipNumber":"HCE690146",
-       "price": 100,
-       "owner":{
-          "name":"Sanna",
-          "lastName":"Ness",
-          "phoneNumber":"0705557289"
-       }
-    },
-    {
-       "name":"Ozzy",
-       "sex":"male",
-       "breed":"schnauzer",
-       "img":"https://images.dog.ceo/breeds/schnauzer-giant/n02097130_2149.jpg",
-       "present":true,
-       "age":10,
-       "chipNumber":"ABH731630",
-       "price": 23000,
-       "owner":{
-          "name":"Ezra",
-          "lastName":"Iller",
-          "phoneNumber":"0731463368"
-       }
-    },
-    {
-       "name":"Zorro",
-       "sex":"male",
-       "breed":"labrador",
-       "img":"https://images.dog.ceo/breeds/labrador/n02099712_619.jpg",
-       "present":false,
-       "age":11,
-       "chipNumber":"ELM273769",
-       "price": 40000,
-       "owner":{
-          "name":"Ali",
-          "lastName":"Robinson",
-          "phoneNumber":"0708863038"
-       }
-    },
-    {
-       "name":"Elvis",
-       "sex":"male",
-       "breed":"groenendael",
-       "img":"https://images.dog.ceo/breeds/groenendael/n02105056_5700.jpg",
-       "present":false,
-       "age":8,
-       "chipNumber":"MCI863691",
-       "price": 5200,
-       "owner":{
-          "name":"Martin",
-          "lastName":"Karlsson",
-          "phoneNumber":"0708316927"
-       }
-    },
-    {
-       "name":"Mimmi",
-       "sex":"female",
-       "breed":"maltese",
-       "img":"https://images.dog.ceo/breeds/maltese/n02085936_8507.jpg",
-       "present":true,
-       "age":4,
-       "chipNumber":"NCE812394",
-       "price": 42000,
-       "owner":{
-          "name":"Lina",
-          "lastName":"Ahlberg",
-          "phoneNumber":"0704235292"
-       }
-    },
-    {
-       "name":"Harry",
-       "sex":"male",
-       "breed":"chihuahua",
-       "img":"https://images.dog.ceo/breeds/chihuahua/n02085620_8491.jpg",
-       "present":true,
-       "age":10,
-       "chipNumber":"NBC982563",
-       "price": 24000,
-       "owner":{
-          "name":"Fanny",
-          "lastName":"Hussein",
-          "phoneNumber":"0769168219"
-       }
-    },
-    {
-       "name":"Milo",
-       "sex":"male",
-       "breed":"maltese",
-       "img":"https://images.dog.ceo/breeds/maltese/n02085936_851.jpg",
-       "present":false,
-       "age":2,
-       "chipNumber":"DNM403435",
-       "price": 10000,
-       "owner":{
-          "name":"Lollo",
-          "lastName":"Svensson",
-          "phoneNumber":"0705613017"
-       }
-    },
-    {
-       "name":"Tyson",
-       "sex":"male",
-       "breed":"beagle",
-       "img":"https://images.dog.ceo/breeds/beagle/n02088364_14055.jpg",
-       "present":false,
-       "age":11,
-       "chipNumber":"LFO741673",
-       "price": 400,
-       "owner":{
-          "name":"Tina",
-          "lastName":"Remm",
-          "phoneNumber":"0731353922"
-       }
-    },
-    {
-       "name":"Daisy",
-       "sex":"female",
-       "breed":"newfoundland",
-       "img":"https://images.dog.ceo/breeds/newfoundland/n02111277_7060.jpg",
-       "present":false,
-       "age":13,
-       "chipNumber":"DPP189902",
-       "price": 20,
-       "owner":{
-          "name":"Fanny",
-          "lastName":"Jonsson",
-          "phoneNumber":"0732489689"
-       }
-    },
-    {
-       "name":"Buster",
-       "sex":"male",
-       "breed":"beagle",
-       "img":"https://images.dog.ceo/breeds/beagle/n02088364_13214.jpg",
-       "present":false,
-       "age":2,
-       "chipNumber":"DAD736425",
-       "price": 4200,
-       "owner":{
-          "name":"Martin",
-          "lastName":"Hök",
-          "phoneNumber":"0762263916"
-       }
-    },
-    {
-       "name":"Gizmo",
-       "sex":"male",
-       "breed":"labrador",
-       "img":"https://images.dog.ceo/breeds/labrador/n02099712_7802.jpg",
-       "present":true,
-       "age":8,
-       "chipNumber":"NKF114892",
-       "price": 600,
-       "owner":{
-          "name":"Johan",
-          "lastName":"Makai",
-          "phoneNumber":"0739862296"
-       }
-    },
-    {
-       "name":"Luna",
-       "sex":"female",
-       "breed":"boxer",
-       "img":"https://images.dog.ceo/breeds/boxer/n02108089_7319.jpg",
-       "present":false,
-       "age":10,
-       "chipNumber":"QAH994994",
-       "price": 910000,
-       "owner":{
-          "name":"Kim",
-          "lastName":"Doner",
-          "phoneNumber":"0704769078"
-       }
-    }
- ]
+   {
+      "name": "Molly",
+      "sex": "female",
+      "breed": "briard",
+      "img": "https://images.dog.ceo/breeds/briard/n02105251_6840.jpg",
+      "present": false,
+      "age": 4,
+      "chipNumber": "IEH455006",
+      "price": 10000,
+      "owner": {
+         "name": "Wilmer",
+         "lastName": "Svensson",
+         "phoneNumber": "0769239356"
+      }
+   },
+   {
+      "name": "Bella",
+      "sex": "female",
+      "breed": "labrador",
+      "img": "https://images.dog.ceo/breeds/labrador/n02099712_3947.jpg",
+      "present": false,
+      "age": 1,
+      "chipNumber": "HPF367168",
+      "price": 14000,
+      "owner": {
+         "name": "Tina",
+         "lastName": "Ahlberg",
+         "phoneNumber": "0732303484"
+      }
+   },
+   {
+      "name": "Charlie",
+      "sex": "male",
+      "breed": "retriever",
+      "img": "https://images.dog.ceo/breeds/retriever-chesapeake/n02099849_3645.jpg",
+      "present": true,
+      "age": 5,
+      "chipNumber": "DBP669806",
+      "price": 20000,
+      "owner": {
+         "name": "Tina",
+         "lastName": "Hök",
+         "phoneNumber": "0708671977"
+      }
+   },
+   {
+      "name": "Ludde",
+      "sex": "male",
+      "breed": "greyhound",
+      "img": "https://images.dog.ceo/breeds/greyhound-italian/n02091032_907.jpg",
+      "present": true,
+      "age": 5,
+      "chipNumber": "HLM936015",
+      "price": 14500,
+      "owner": {
+         "name": "David",
+         "lastName": "Emraz",
+         "phoneNumber": "0762592136"
+      }
+   },
+   {
+      "name": "Doris",
+      "sex": "female",
+      "breed": "groenendael",
+      "img": "https://images.dog.ceo/breeds/groenendael/n02105056_2194.jpg",
+      "present": true,
+      "age": 8,
+      "chipNumber": "ELN562847",
+      "price": 4000,
+      "owner": {
+         "name": "David",
+         "lastName": "Ahlberg",
+         "phoneNumber": "0765237613"
+      }
+   },
+   {
+      "name": "Sigge",
+      "sex": "male",
+      "breed": "husky",
+      "img": "https://images.dog.ceo/breeds/husky/n02110185_8860.jpg",
+      "present": false,
+      "age": 7,
+      "chipNumber": "HAA378909",
+      "price": 0,
+      "owner": {
+         "name": "Moa",
+         "lastName": "Jonsson",
+         "phoneNumber": "0705896593"
+      }
+   },
+   {
+      "name": "Wilma",
+      "sex": "female",
+      "breed": "akita",
+      "img": "https://images.dog.ceo/breeds/akita/Akita_inu_blanc.jpg",
+      "present": false,
+      "age": 6,
+      "chipNumber": "GEL894256",
+      "price": 7000,
+      "owner": {
+         "name": "David",
+         "lastName": "Doner",
+         "phoneNumber": "0705449389"
+      }
+   },
+   {
+      "name": "Bamse",
+      "sex": "male",
+      "breed": "newfoundland",
+      "img": "https://images.dog.ceo/breeds/newfoundland/n02111277_6402.jpg",
+      "present": false,
+      "age": 6,
+      "chipNumber": "FAK548352",
+      "price": 18000,
+      "owner": {
+         "name": "Lollo",
+         "lastName": "Emraz",
+         "phoneNumber": "0762550965"
+      }
+   },
+   {
+      "name": "Sally",
+      "sex": "female",
+      "breed": "schnauzer",
+      "img": "https://images.dog.ceo/breeds/schnauzer-miniature/n02097047_157.jpg",
+      "present": false,
+      "age": 2,
+      "chipNumber": "JLO423741",
+      "price": 420000,
+      "owner": {
+         "name": "Emma",
+         "lastName": "Kihl",
+         "phoneNumber": "0703474026"
+      }
+   },
+   {
+      "name": "Alice",
+      "sex": "female",
+      "breed": "border collie",
+      "img": "https://images.dog.ceo/breeds/collie-border/n02106166_930.jpg",
+      "present": true,
+      "age": 7,
+      "chipNumber": "CFL247788",
+      "price": 1000,
+      "owner": {
+         "name": "Tina",
+         "lastName": "Doner",
+         "phoneNumber": "0762187564"
+      }
+   },
+   {
+      "name": "Ronja",
+      "sex": "female",
+      "breed": "akita",
+      "img": "https://images.dog.ceo/breeds/akita/Akita_Inu_dog.jpg",
+      "present": false,
+      "age": 7,
+      "chipNumber": "IID568612",
+      "price": 53000,
+      "owner": {
+         "name": "Anna",
+         "lastName": "Robinson",
+         "phoneNumber": "0708439574"
+      }
+   },
+   {
+      "name": "Rocky",
+      "sex": "male",
+      "breed": "terrier",
+      "img": "https://images.dog.ceo/breeds/terrier-irish/n02093991_1038.jpg",
+      "present": true,
+      "age": 1,
+      "chipNumber": "ILN11332",
+      "price": 10000,
+      "owner": {
+         "name": "Lollo",
+         "lastName": "Yahla",
+         "phoneNumber": "0762411432"
+      }
+   },
+   {
+      "name": "Stella",
+      "sex": "female",
+      "breed": "terrier",
+      "img": "https://images.dog.ceo/breeds/terrier-kerryblue/n02093859_1213.jpg",
+      "present": false,
+      "age": 5,
+      "chipNumber": "GAH974488",
+      "price": 9000,
+      "owner": {
+         "name": "Axel",
+         "lastName": "Doner",
+         "phoneNumber": "0703887903"
+      }
+   },
+   {
+      "name": "Nova",
+      "sex": "female",
+      "breed": "pomeranian",
+      "img": "https://images.dog.ceo/breeds/pomeranian/n02112018_8161.jpg",
+      "present": true,
+      "age": 1,
+      "chipNumber": "HCE690146",
+      "price": 100,
+      "owner": {
+         "name": "Sanna",
+         "lastName": "Ness",
+         "phoneNumber": "0705557289"
+      }
+   },
+   {
+      "name": "Ozzy",
+      "sex": "male",
+      "breed": "schnauzer",
+      "img": "https://images.dog.ceo/breeds/schnauzer-giant/n02097130_2149.jpg",
+      "present": true,
+      "age": 10,
+      "chipNumber": "ABH731630",
+      "price": 23000,
+      "owner": {
+         "name": "Ezra",
+         "lastName": "Iller",
+         "phoneNumber": "0731463368"
+      }
+   },
+   {
+      "name": "Zorro",
+      "sex": "male",
+      "breed": "labrador",
+      "img": "https://images.dog.ceo/breeds/labrador/n02099712_619.jpg",
+      "present": false,
+      "age": 11,
+      "chipNumber": "ELM273769",
+      "price": 40000,
+      "owner": {
+         "name": "Ali",
+         "lastName": "Robinson",
+         "phoneNumber": "0708863038"
+      }
+   },
+   {
+      "name": "Elvis",
+      "sex": "male",
+      "breed": "groenendael",
+      "img": "https://images.dog.ceo/breeds/groenendael/n02105056_5700.jpg",
+      "present": false,
+      "age": 8,
+      "chipNumber": "MCI863691",
+      "price": 5200,
+      "owner": {
+         "name": "Martin",
+         "lastName": "Karlsson",
+         "phoneNumber": "0708316927"
+      }
+   },
+   {
+      "name": "Mimmi",
+      "sex": "female",
+      "breed": "maltese",
+      "img": "https://images.dog.ceo/breeds/maltese/n02085936_8507.jpg",
+      "present": true,
+      "age": 4,
+      "chipNumber": "NCE812394",
+      "price": 42000,
+      "owner": {
+         "name": "Lina",
+         "lastName": "Ahlberg",
+         "phoneNumber": "0704235292"
+      }
+   },
+   {
+      "name": "Harry",
+      "sex": "male",
+      "breed": "chihuahua",
+      "img": "https://images.dog.ceo/breeds/chihuahua/n02085620_8491.jpg",
+      "present": true,
+      "age": 10,
+      "chipNumber": "NBC982563",
+      "price": 24000,
+      "owner": {
+         "name": "Fanny",
+         "lastName": "Hussein",
+         "phoneNumber": "0769168219"
+      }
+   },
+   {
+      "name": "Milo",
+      "sex": "male",
+      "breed": "maltese",
+      "img": "https://images.dog.ceo/breeds/maltese/n02085936_851.jpg",
+      "present": false,
+      "age": 2,
+      "chipNumber": "DNM403435",
+      "price": 10000,
+      "owner": {
+         "name": "Lollo",
+         "lastName": "Svensson",
+         "phoneNumber": "0705613017"
+      }
+   },
+   {
+      "name": "Tyson",
+      "sex": "male",
+      "breed": "beagle",
+      "img": "https://images.dog.ceo/breeds/beagle/n02088364_14055.jpg",
+      "present": false,
+      "age": 11,
+      "chipNumber": "LFO741673",
+      "price": 400,
+      "owner": {
+         "name": "Tina",
+         "lastName": "Remm",
+         "phoneNumber": "0731353922"
+      }
+   },
+   {
+      "name": "Daisy",
+      "sex": "female",
+      "breed": "newfoundland",
+      "img": "https://images.dog.ceo/breeds/newfoundland/n02111277_7060.jpg",
+      "present": false,
+      "age": 13,
+      "chipNumber": "DPP189902",
+      "price": 20,
+      "owner": {
+         "name": "Fanny",
+         "lastName": "Jonsson",
+         "phoneNumber": "0732489689"
+      }
+   },
+   {
+      "name": "Buster",
+      "sex": "male",
+      "breed": "beagle",
+      "img": "https://images.dog.ceo/breeds/beagle/n02088364_13214.jpg",
+      "present": false,
+      "age": 2,
+      "chipNumber": "DAD736425",
+      "price": 4200,
+      "owner": {
+         "name": "Martin",
+         "lastName": "Hök",
+         "phoneNumber": "0762263916"
+      }
+   },
+   {
+      "name": "Gizmo",
+      "sex": "male",
+      "breed": "labrador",
+      "img": "https://images.dog.ceo/breeds/labrador/n02099712_7802.jpg",
+      "present": true,
+      "age": 8,
+      "chipNumber": "NKF114892",
+      "price": 600,
+      "owner": {
+         "name": "Johan",
+         "lastName": "Makai",
+         "phoneNumber": "0739862296"
+      }
+   },
+   {
+      "name": "Luna",
+      "sex": "female",
+      "breed": "boxer",
+      "img": "https://images.dog.ceo/breeds/boxer/n02108089_7319.jpg",
+      "present": false,
+      "age": 10,
+      "chipNumber": "QAH994994",
+      "price": 910000,
+      "owner": {
+         "name": "Kim",
+         "lastName": "Doner",
+         "phoneNumber": "0704769078"
+      }
+   },
+   {
+      "name": "DOGE",
+      "sex": "unknown",
+      "breed": "Shiba Inu",
+      "img": "https://static.wikia.nocookie.net/dogelore/images/9/97/Doge.jpg",
+      "present": false,
+      "age": 4,
+      "chipNumber": "IEH1337",
+      "price": 1337,
+      "owner": {
+         "name": "Elon",
+         "lastName": "Musk",
+         "phoneNumber": "112"
+      }
+   }
+]

@@ -1,9 +1,5 @@
 import { shallowMount, mount } from "@vue/test-utils";
-
-import ProductCard from "@/components/ProductCard.vue";
-
 import Product from "@/components/ProductCard.vue";
-
 import MainPage from "@/components/MainPage.vue";
 
 describe("ProductCard.vue", () => {
@@ -39,27 +35,9 @@ describe("ProductCard.vue", () => {
     const actual = await wrapper.find(".dog-age");
     const actualText = await actual.text();
 
-
-/*	it('it should display a name', async () => {
-		// arrange
-		const wrapper = await shallowMount(Product, {
-            propsData: {
-                dog: {
-                    name: "Molly"
-                }
-             
-            }
-          })
-		const expected = "Molly";
-		// act
-        const actual = await wrapper.find('.dog-name')
-        const actualText = await actual.text()
-        
-        // assert
-        expect(actualText).toMatch(expected)
-
+    // assert
+    expect(actualText).toMatch(expected);
   });
-
 
   it("it should display a breed", async () => {
     // arrange
@@ -114,82 +92,54 @@ describe("ProductCard.vue", () => {
     expect(actual.attributes("src")).toBe(expected);
   });
 
-  it("should emit the dog chosen ", async() => {
-    // //arrange
+  //assert
 
-    const wrapper = mount(MainPage);
-    
+  it("should display a image", async () => {
+    // arrange
+    const wrapper = await shallowMount(Product, {
+      propsData: {
+        dog: {
+          img: "https://images.dog.ceo/breeds/briard/n02105251_6840.jpg",
+        },
+      },
+    });
+    const expected = "https://images.dog.ceo/breeds/briard/n02105251_6840.jpg";
+    // act
+    const actual = await wrapper.find(".dog-image");
 
-    //act
-    
+    // assert
+    expect(actual.attributes("src")).toBe(expected);
+  });
 
-    await wrapper.vm.$emit("dogToEmit");
-    await wrapper.vm.$emit("dogToEmit", {name:'Molly'});
+  it("should display price with a font css class", async () => {
+    const wrapper = await shallowMount(Product, {
+      propsData: {
+        dog: {
+          price: 1337,
+        },
+      },
+    });
+    // takes the price element
+    const actual = wrapper.find(".dog-price");
+    const acualExist = actual.exists();
+    //checks if
+    expect(acualExist).toBeTruthy;
+    expect(actual.attributes("class")).toMatch("price-font");
+  });
+});
 
-    await wrapper.vm.$nextTick();
-    await wrapper.vm.$nextTick();
-    console.log(wrapper.emitted());
+it("should emit the dog chosen ", async () => {
+  // //arrange
 
-    //assert
+  const wrapper = mount(MainPage);
+  // //act
+  wrapper.vm.$emit("dogToEmit");
+  wrapper.vm.$emit("dogToEmit", "Molly");
 
-    it('should display a image', async () => {
-		// arrange
-		const wrapper = await shallowMount(Product, {
-            propsData: {
-                dog: {
-                    img: "https://images.dog.ceo/breeds/briard/n02105251_6840.jpg"
-                }
-             
-            }
-          })
-		const expected = "https://images.dog.ceo/breeds/briard/n02105251_6840.jpg";
-		// act
-        const actual = await wrapper.find('.dog-image')
-        
-        // assert
-        expect(actual.attributes('src')).toBe(expected)
+  await wrapper.vm.$nextTick();
+  await wrapper.vm.$nextTick();
+  // //assert
 
-    })
-
-    
-    it("should display price with a font css class", async () => {
-        const wrapper = await shallowMount(Product, {
-            propsData: {
-                dog: {
-                    price: 1337
-                }
-             
-            }
-          })
-        // takes the price element
-        const actual = wrapper.find('.dog-price');
-        const acualExist = actual.exists()
-        //checks if 
-        expect(acualExist).toBeTruthy;
-        expect(actual.attributes("class")).toMatch("price-font")
-    })
-
-})
-
-
-    it('should emit the dog chosen ', async () => {
-        //arrange
-        const wrapper = mount(MainPage)
-
-        // act
-        wrapper.vm.$emit('dogToEmit', 123)
-        await wrapper.vm.$nextTick() // Wait until $emits have been handled
-
-
-        // assert
-       expect(wrapper.emitted().dogToEmit).toBeTruthy();
-       expect(wrapper.emitted().dogToEmit.length).toBe(1)
-       expect(wrapper.emitted().dogToEmit[0]).toEqual([123])
-
-    })
-
-})
-
-   
-
+  expect(wrapper.emitted().dogToEmit).toBeTruthy();
+  expect(wrapper.emitted().dogToEmit[1][0]).toEqual("Molly");
 });

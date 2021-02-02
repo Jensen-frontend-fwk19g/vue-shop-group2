@@ -4,17 +4,11 @@
       <h1 class="title">Dogs Center</h1>
     </header>
     <article class="container">
-
-     <ProductCard @dogEmit="listen"
-     
-
-     <ProductCard
-
+    <ProductCard
+        @dogEmit="listen"
         v-for="dog in dogs" 
         :key="dog.chipNumber" 
         :dog="dog"/>
-
-     
     </article>
 
   </section>
@@ -25,38 +19,20 @@
 
 import ProductCard from '@/components/ProductCard.vue'
 
-
 export default {
   name: 'MainPage',
-  data() {
-    return {
-      dogData:{}
-    }
-  },
-
   components: {
     ProductCard
   },
   props: {
     dogs: Array,
-   
-   
   },
-
-
-
-
-
    methods:{
       listen(e){
         this.$emit('dogEmit', e)
       }
   }
-
   
-
-
-
 }
 </script>
 

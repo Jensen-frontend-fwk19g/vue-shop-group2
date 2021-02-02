@@ -17,32 +17,20 @@ import CartCounter from "@/components/CartCounter"
 
 export default {
   name: 'Home',
-  data() {
-    return {
-      dogsToBuy:[]
-    }
-  },
-  
   components: {
- 
     MainPage,
     CartCounter
   },
-
-    data () {
+  data() {
     return {
-       dogArray: []
-
+      dogArray:[]
     }
   },
-
   props: {
     dogs: Array,
     dog:Object,
-
-    
-
   },
+  
 
   methods:{
 

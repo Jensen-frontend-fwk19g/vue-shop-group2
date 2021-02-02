@@ -4,20 +4,30 @@ import CartCounter from "@/components/CartCounter.vue";
 describe("CartCounter.vue", () => {
   it("should display,when the page is mounted, the img of the bag inside the cart ", () => {
     //arrange
-    const wrapper = shallowMount(CartCounter);
+    const wrapper = shallowMount(CartCounter, {
+      propsData: {
+        dogArray:[]
+      }
+    });
     const expectedHtml = '<img class="bag" src="" alt="Cart">';
     //act
     const actualHtml = wrapper.find(".bag").html();
+    console.log(actualHtml)
     //assert
     expect(actualHtml).toBe(expectedHtml);
   });
+
   it("should, when is mounted, disply the value of 0 ", () => {
     //arrange
-    const wrapper = shallowMount(CartCounter);
-    const expected = 0;
+    const wrapper = shallowMount(CartCounter, {
+      propsData: {
+        dogArray: [],
+      }
+    });
+    const expected = '0';
     //act
     const counter = wrapper.find(".counter").text();
-    const actual = parseInt(counter);
+    const actual = counter;
     //assert
     expect(actual).toBe(expected);
   });
@@ -25,7 +35,11 @@ describe("CartCounter.vue", () => {
   it("should display the increment when the add button is pressed", async () => {
     //arrange
     const expected = 0 + 1;
-    const wrapper = shallowMount(CartCounter);
+    const wrapper = shallowMount(CartCounter, {
+      propsData: {
+        dogArray: fakeData(),
+      },
+    });
     //act
     const addButton = wrapper.find(".add");
     await addButton.trigger("click");
@@ -33,10 +47,15 @@ describe("CartCounter.vue", () => {
     //assert
     expect(actualCounter).toBe(expected);
   });
+
   it("should display the decrement when the dec button is pressed", async () => {
     //arrange
-    const expected = 0 - 1;
-    const wrapper = shallowMount(CartCounter);
+    const expected = 2-1 ;
+    const wrapper = shallowMount(CartCounter, {
+      propsData: {
+        dogArray: fakeData(),
+      },
+    });
     //act
     const addButton = wrapper.find(".dec");
     await addButton.trigger("click");
@@ -48,32 +67,37 @@ describe("CartCounter.vue", () => {
   it("should display the numbers of items bought in the cardCounter", async () => {
     
     
-    const wrapper = shallowMount(CartCounter);
-    const fakeData =  [
-      {
-        dogDescription: "Dalmatin ",
-        price: 400,
-        dataOfBirth: "2015/12/01",
-      },
-      {
-        dogDescription: "Dalmatin ",
-        price: 400,
-        dataOfBirth: "2015/12/01",
-      },
-    ]
+    const wrapper = shallowMount(CartCounter, {
+      propsData: {
+        dogArray:fakeData()
+      }
+      
+      
+    });
+   
 
-        const arrayLength = fakeData.length
+        const arrayLength = fakeData().length
 
         // Act
-         await wrapper.setData({
-            counter: arrayLength
-        });
-
         const actualItems = parseInt(wrapper.find('.counter').text())
-
         // Assert
         expect(actualItems).toBe(arrayLength);
   
   });
 
 });
+
+function fakeData() {
+  return [
+    {
+      name: "DOGE",
+      sex: "unknown",
+      breed: "Shiba Inu",
+      img: "https://static.wikia.nocookie.net/dogelore/images/9/97/Doge.jpg",
+      present: false,
+      age: 4,
+      chipNumber: "IEH1337",
+      price: 1337,
+    },
+  ];
+}

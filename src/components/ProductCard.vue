@@ -4,31 +4,17 @@
       <p class="dog-name">Name: {{dog.name}}</p>
       <p class="dog-breed">Breed: {{dog.breed}}</p>
 
-      <p class="dog-age">Age: {{dog.age}}</p>
-      <p class="dog-sex">Sex: {{dog.sex}}</p>
-      <p class="dog-price">Price: {{dog.price}}:-</p>
-      <AddButton  @click="dogEmit" :dog="dogData" />
-
-
-
-        <section class="flex-container box-line">
+    
+    <section class="flex-container box-line">
         <p class="dog-age">Age: {{dog.age}}</p>
         <p class="dog-sex">Sex: {{dog.sex}}</p>
-        </section>
-        
-        <section class="flex-container box-line price-container">
+    </section>
+    <section class="flex-container box-line price-container">
         <span class="dog-price price-font">Price: {{dog.price}}:-</span>
         
-        <div class="buy-button">
-            <div>
-                <span class="buy-button-span">Add to Card</span>
-            </div>
-        </div>
-        </section>
+              <AddButton  @click="dogEmit" :dog="dogData" />
 
-
-
-
+    </section>
   </section>
 </template>
 
@@ -36,7 +22,7 @@
 import AddButton from "@/components/AddButton"
 
 export default {
-    name: "productCard",
+    name: "ProductCard",
     props: {
         dog: Object
     },
@@ -54,6 +40,7 @@ export default {
     methods: {
          dogEmit(){
              this.$emit('dogEmit', this.dog )             
+
          }
     }
 }
@@ -87,7 +74,7 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: center;
-
+    border-radius: .2rem;
     background: chartreuse;
     transition: all 0.3s ease-out;
 
@@ -99,9 +86,6 @@ export default {
 
 
 }
-
-
-
 .price-font {
     font-size: 23px;
     font-weight: 400;
@@ -112,10 +96,14 @@ export default {
     height: 4rem;
     padding: 15px 0;
 }
+.dog-price{
+    align-self: center;
+}
 
 .flex-container {
     display: flex;
     justify-content: space-evenly;
+    
 }
 
 .box-line {
