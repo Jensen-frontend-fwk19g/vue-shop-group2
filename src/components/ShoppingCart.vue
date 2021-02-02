@@ -1,30 +1,31 @@
 <template>
   <article id="cart">
     <h1 class="emptyCartText" v-if="isEmpty()">Shopping cart is empty</h1>
-  </article>
   <div v-if="!isEmpty()" class="shopping-cart-list">
-    <ShoppingCartItem
-      v-for="dog in cartItems"
+  
+    <ShoppingCartItem 
+      @click="removeItem(index)"
+      v-for="(dog, index) in shoppingCartList"
       :key="dog.chipNumber"
       :dog="dog"
     />
+    <p class="total-cost">Total cost: {{totalCost}} kr</p>
+
   </div>
+    </article>
+
 </template>
 
 <script>
+
 import ShoppingCartItem from "@/components/ShoppingCartItem";
+import TotalSum from "@/components/TotalSum";
 
 export default {
   name: "Cart",
   components: {
     ShoppingCartItem,
-  },
-  props: {
-    cartItems: Array,
-    dogs: Array,
-  },
-  data() {
-    return {};
+    TotalSum
   },
   computed: {
     itemsInCart() {
@@ -34,75 +35,37 @@ export default {
         return 0;
       }
     },
-  },
-  methods: {
-    // getDog(id) {
-    //
-    // },
-    isEmpty() {
-      return this.cartItems < 1;
+    props: {
+      cartItems: Array,
+      dogs: Array
     },
-    increaseQnt() {
-      this.defaultQuantity++;
+    beforeMount() {
+      this.shoppingCartList = this.cartItems;
+      this.updateTotalCost();
     },
-    decreaseQnt() {
-      this.defaultQuantity--;
-      if (this.defaultQuantity === 0) {
-        this.defaultQuantity = 1;
+    data(){
+      return{
+        shoppingCartList: [],
+        totalCost: 0
       }
     },
-    removeItem() {
-      this.showItem = false;
+    methods: {
+      isEmpty() {
+        return this.shoppingCartList < 1;
+      },
+      removeItem(index){
+        this.shoppingCartList.splice(index,1);
+        this.updateTotalCost();
+      },
+      updateTotalCost() {
+        let totalCost = 0;
+        this.shoppingCartList.forEach(entry => {
+          totalCost += entry.price;
+        });
+        this.totalCost = totalCost;
+      }
     },
-  },
-};
+  }
 </script>
 <style scoped>
-#cart {
-  display: flex;
-}
-#customers {
-  margin-top: 3rem;
-}
-.item-in-cart-cls {
-  background-color: rgba(210, 254, 223, 0.593);
-  border: 1px solid rgba(0, 128, 0, 0.635);
-  border-radius: 5px;
-  padding: 3px;
-  text-align: center;
-}
-.deleteBtn {
-  background-color: rgba(254, 2, 2, 0.703);
-  color: rgb(239, 233, 233);
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
-}
-.item-qnty {
-  border: 1px solid black;
-  width: auto;
-}
-#item-counts {
-  margin: 5px;
-}
-.arrow-up-btn {
-  background-color: rgba(84, 238, 107, 0.703);
-  color: rgb(15, 34, 19);
-  border: none;
-  border-radius: 2px;
-  cursor: pointer;
-}
-.arrow-down-btn {
-  background-color: rgba(238, 84, 84, 0.703);
-  color: rgb(34, 15, 15);
-  border: none;
-  border-radius: 2px;
-  cursor: pointer;
-}
-tfoot {
-  background-color: rgb(172, 234, 224);
-}
-thead {
-  background-color: rgba(138, 179, 172, 0.765);
-}
 </style>
