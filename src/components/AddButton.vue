@@ -2,7 +2,8 @@
 
     <button
     id="add-button" 
-    @click="addToCart()">{{ btnText }}
+    @click="addToCart()">
+    {{ btnText }}
     </button>
 
 </template>
@@ -27,4 +28,17 @@ export default {
 </script>
 
 <style scoped>
+#add-button {
+    width: 49%;
+    background: chartreuse;
+    font-size: 16px;
+    border-radius: .2rem;
+    transition: all 0.3s ease-out;
+}
+
+#add-button:hover {
+    background: coral;
+    font-size: 18px;
+}
+
 </style>
