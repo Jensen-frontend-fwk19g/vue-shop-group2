@@ -9,26 +9,17 @@
 export default {
     name: "TotalSum",
     
-    data: () => ({
-        cartOrders: [
-                {
-                    product: "A",
-                    price: 100
-                }, 
-                {
-                    product: "B",
-                    price: 900
-                },
-        ]   
-         }),
+    props: {
+    dogs: Array
+    },
 
     computed: {
         computedSum() {
         let sum = 0
-        this.cartOrders.forEach(order => {
+        this.dogs.forEach(order => {
             sum += order.price
         });
-            return sum;
+             return sum;
         }
     }
 

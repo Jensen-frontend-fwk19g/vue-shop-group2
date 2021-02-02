@@ -1,23 +1,27 @@
 <template>
   <article id="cart">
     <h1 class="emptyCartText" v-if="isEmpty()">Shopping cart is empty</h1>
-  </article>
   <div v-if="!isEmpty()" class="shopping-cart-list">
-    <ShoppingCartItem
+    <ShoppingCartItem 
       v-for="dog in cartItems"
       :key="dog.chipNumber"
       :dog="dog"
-    />
+    /> 
+    <TotalSum :dogs="dogs"/>
   </div>
+    </article>
+
 </template>
 
 <script>
 import ShoppingCartItem from "@/components/ShoppingCartItem";
+import TotalSum from "@/components/TotalSum";
 
 export default {
   name: "Cart",
   components: {
     ShoppingCartItem,
+    TotalSum
   },
   props: {
     cartItems: Array,
