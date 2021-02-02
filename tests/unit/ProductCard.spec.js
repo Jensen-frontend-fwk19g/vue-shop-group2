@@ -126,7 +126,6 @@ describe("ProductCard.vue", () => {
     expect(acualExist).toBeTruthy;
     expect(actual.attributes("class")).toMatch("price-font");
   });
-});
 
 it("should emit the dog chosen ", async () => {
   // //arrange
@@ -143,3 +142,38 @@ it("should emit the dog chosen ", async () => {
   expect(wrapper.emitted().dogToEmit).toBeTruthy();
   expect(wrapper.emitted().dogToEmit[1][0]).toEqual("Molly");
 });
+
+it("should change data value to true after one button click", () => {
+
+  //sets prop to have a dog in it
+  const wrapper = shallowMount(Product, {
+      propsData: {
+        dog: fakeData()
+      }
+    })
+  //expected to return true after one click on buy button
+  const expectedDataValue = true
+  //expected class to be applied after one click on buy button
+  // const expectedElClass = "disabled"
+  //button element on product card
+  const btnAdd = wrapper.find(".buy-button");
+  btnAdd.trigger("click");
+
+  expect(wrapper.vm.alreadyAdded).toBe(expectedDataValue)
+})
+});
+
+function fakeData() {
+  return [
+    {
+      name: "DOGE",
+      sex: "unknown",
+      breed: "Shiba Inu",
+      img: "https://static.wikia.nocookie.net/dogelore/images/9/97/Doge.jpg",
+      present: false,
+      age: 4,
+      chipNumber: "IEH1337",
+      price: 1337,
+    },
+  ];
+}
