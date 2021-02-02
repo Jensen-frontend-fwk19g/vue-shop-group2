@@ -1,6 +1,6 @@
-import { shallowMount, mount } from "@vue/test-utils";
+import { shallowMount } from "@vue/test-utils";
 import CartCounter from "@/components/CartCounter.vue";
-import MainPage from "@/components/MainPage.vue";
+import ProductCard from "@/components/ProductCard.vue";
 
 describe("CartCounter.vue", () => {
   it("should display,when the page is mounted, the img of the bag inside the cart ", () => {
@@ -33,38 +33,27 @@ describe("CartCounter.vue", () => {
     expect(actual).toBe(expected);
   });
 
-  it("should display the increment when the add button is pressed", async () => {
+  it("should emit an event when the add button is pressed", async () => {
     //arrange
-    const expected = 0 + 1;
-    const wrapper = mount(MainPage);
+    const wrapper = shallowMount(ProductCard, {
+      propsData: {
+        dog: fakeData()[0]
+      },
+    });
+
+
     //act
-    const productCard = wrapper
-      .findAllComponents("ProductCard")
-      .findAll(".buy-button").at(0);
- 
-    expect(productCard).toBe(true);
+    const btnAdd = wrapper.find(".buy-button");
+    await btnAdd.trigger("click");
+    
+
+    //expect(productCard).toBe(true);
     // expect(btnCard).toBe(true);
-    // await addButton.trigger("click");
-    // const actualCounter = parseInt(wrapper.find(".counter").text());
+    
     // //assert
-    // expect(actualCounter).toBe(expected);
+    expect(wrapper.emitted().dogEmit).toBeTruthy();
   });
 
-  // it("should display the decrement when the dec button is pressed", async () => {
-  //   //arrange
-  //   const expected = 2-1 ;
-  //   const wrapper = shallowMount(CartCounter, {
-  //     propsData: {
-  //       dogArray: fakeData(),
-  //     },
-  //   });
-  //   //act
-  //   const addButton = wrapper.find(".dec");
-  //   await addButton.trigger("click");
-  //   const actualCounter = parseInt(wrapper.find(".counter").text());
-  //   //assert
-  //   expect(actualCounter).toBe(expected);
-  // });
 
   it("should display the numbers of items bought in the cardCounter", async () => {
     const wrapper = shallowMount(CartCounter, {
