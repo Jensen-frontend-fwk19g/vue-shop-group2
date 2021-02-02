@@ -1,10 +1,15 @@
 <template>
-  <section id="main-page">
+  <section id="main-page" >
     <header>
       <h1 class="title">Dogs Center</h1>
     </header>
     <article class="container">
+
+     <ProductCard @dogEmit="listen"
+     
+
      <ProductCard
+
         v-for="dog in dogs" 
         :key="dog.chipNumber" 
         :dog="dog"/>
@@ -37,10 +42,21 @@ export default {
    
    
   },
-  methods: {
-   
-  },
+
+
+
+
+
+   methods:{
+      listen(e){
+        this.$emit('dogEmit', e)
+      }
+  }
+
   
+
+
+
 }
 </script>
 
