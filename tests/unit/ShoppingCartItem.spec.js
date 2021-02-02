@@ -83,21 +83,6 @@ describe('ShoppingCart.vue', () => {
   });
 });
 
-it('should display a total price', async () => {
-    // arrange
-    const wrapper = await shallowMount(ShoppingCart, {
-      propsData: {
-        cartItems: getCartItemsMock()
-      }
-    })
-    const expected = "1337";
-    // act
-    const actual = await wrapper.find('.total-cost')
-    const actualText = await actual.text()
-
-    // assert
-    expect(actualText).toMatch(expected)
-  });
 function getDog() {
   return {
     "name": "DOGE",
