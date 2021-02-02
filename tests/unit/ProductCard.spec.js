@@ -161,6 +161,22 @@ it("should change data value to true after one button click", () => {
 
   expect(wrapper.vm.dogData.disabled).toBe(expectedDataValue)
 })
+
+it('should add class "disabled" to the buy button element', () => {
+
+  const wrapper = shallowMount(Product, {
+    propsData: {
+      dog: fakeData()
+    }
+  })
+//expected to return true after one click on buy button
+const expected = "disabled"
+//button element on product card
+const btnAdd = wrapper.find(".buy-button");
+btnAdd.trigger("click");
+
+expect(btnAdd.attributes("class")).toMatch("disabled")
+})
 });
 
 function fakeData() {
