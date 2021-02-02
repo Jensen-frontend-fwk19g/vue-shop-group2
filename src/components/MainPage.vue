@@ -32,6 +32,7 @@ export default {
         this.$emit('dogEmit', e)
       }
   }
+  
 }
 </script>
 
