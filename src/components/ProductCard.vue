@@ -35,8 +35,12 @@ export default {
    },
     methods: {
          addToCart(e){
-             this.$emit('addToCart', e)             
-         }
+            this.$emit('addToCart', e)
+            this.$nextTick(() => {
+            let disabledBtn = document.querySelectorAll('.add-button:disabled')
+            disabledBtn.forEach(btn => btn.parentNode.parentNode.style.opacity = 0.3)
+             })          
+        }
     }
 }
 </script>
