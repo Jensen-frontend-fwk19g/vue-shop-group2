@@ -70,7 +70,7 @@ describe('AddButton.vue', () => {
 	
 		it('should emit the value when button has been clicked once', async () => {
 		//arrange
-		const wrapper = await shallowMount(AddButton, {
+		const wrapper = shallowMount(AddButton, {
 			propsData: {
 				dog: [
 				{
