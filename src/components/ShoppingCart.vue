@@ -10,7 +10,16 @@
       :dog="dog"
     />
     <p class="total-cost">Total cost: {{totalCost}} kr</p>
-
+      <!-- ----//To my test 'Emran' ------------------>
+      <br><br><hr><br> <hr>
+      <CartItem @click="removeItem(index)"
+          v-for="(dog,index) in shoppingCartList"
+          :key="index"
+          :id="dog.chipNumber"
+          :dog="dog"
+          />
+          <br><br><hr><br> <hr>
+          <!-- ---------------------- -->
   </div>
     </article>
 
@@ -19,12 +28,13 @@
 <script>
 
 import ShoppingCartItem from "@/components/ShoppingCartItem";
-
+import CartItem from "@/components/CartItem";
 
 export default {
   name: "Cart",
   components: {
     ShoppingCartItem,
+    CartItem,
   },
   computed: {
     itemsInCart() {
