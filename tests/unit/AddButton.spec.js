@@ -3,7 +3,7 @@ import AddButton from "@/components/AddButton.vue";
 
 describe('AddButton.vue', () => {
 
-	it('should display a button when component mounted', () => {
+	it('should display button element when component mounted', () => {
 		// arrange
 		const wrapper = shallowMount(AddButton)
 		const btn = wrapper.find('button')
@@ -18,8 +18,9 @@ describe('AddButton.vue', () => {
 	it('should display a button with text "Add to cart" when component mounted', () => {
 		// arrange
 		const wrapper = shallowMount(AddButton)
+		wrapper.setData({ btnText: "Add to cart"})
 		const btn = wrapper.find('button')
-		const expected = 'Add to cart'
+		const expected = wrapper.vm.btnText
 
 		// act
 		const actual = btn.text()
@@ -31,7 +32,6 @@ describe('AddButton.vue', () => {
 	it('it should display "Added to cart" when button clicked', async () => {
 		// arrange
 	   	const wrapper = shallowMount(AddButton)
-
 		const expected = 'Added to cart'
 		
 		// act
@@ -42,12 +42,11 @@ describe('AddButton.vue', () => {
 		expect(actual).toBe(expected)
 	})
 
-	
 		it('should show a button element not disabled when component mounted', () => {
 	   	// arrange
 		const wrapper = shallowMount(AddButton)
 		const btn = wrapper.find(".add-button")
-		
+
 		// act
 		let actualBtnAttributes = JSON.stringify(btn.attributes())
 		
@@ -71,7 +70,7 @@ describe('AddButton.vue', () => {
 		it('should emit the value when button has been clicked once', async () => {
 		//arrange
 		const wrapper = shallowMount(AddButton, {
-			propsData: {
+			props: {
 				dog: [
 				{
 					"name": "Molly",
@@ -93,10 +92,12 @@ describe('AddButton.vue', () => {
 
 		// act 
 		const actualCartOrder = wrapper.vm.dog
-		wrapper.vm.$emit('addToCart', actualCartOrder)		  
+		wrapper.vm.$emit('addToCart', actualCartOrder)	
+		await wrapper.vm.$nextTick()	  
 
 		// assert
   		expect(wrapper.emitted().addToCart).toBeTruthy()
 		expect(wrapper.emitted().addToCart.length).toBe(1)
+		expect(wrapper.emitted().addToCart[0]).toEqual([actualCartOrder])
 		})
 })
