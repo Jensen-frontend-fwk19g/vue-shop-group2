@@ -40,7 +40,9 @@ describe('AddButton.vue', () => {
 		expect(actual).toBe(expected)
 	})
 
-	it('it should update the data in vue object with the product ID when button clicked', async () => {
+
+	
+	it('should update the data in vue object with a btnID value when button clicked', async () => {
 		// arrange
 		const wrapper = shallowMount(AddButton)
 		const expectedID = ""
@@ -51,5 +53,12 @@ describe('AddButton.vue', () => {
 		// assert
 		expect(actualID).toBe(expectedID);
 	})
-	
+
 })
+
+
+// should have button ID data in vue object that is not assigned when component mounted
+
+// should show a button element not disabled when component mounted
+// should disable the button element when it is clicked
+// should emit an event when button it is clicked
