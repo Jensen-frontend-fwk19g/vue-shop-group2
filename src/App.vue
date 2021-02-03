@@ -1,28 +1,24 @@
 <template>
   <div id="nav">
     <router-link to="/">Home</router-link> |
-    <router-link to="/about">Cart</router-link>
+    <router-link to="/about">Cart</router-link> |
+    <router-link to="/facilities">Facility</router-link>
 
-    <router-view :dogs="dogs"/>
-
+    <router-view :dogs="dogs" />
   </div>
 </template>
 
-
-
-
 <script>
-import dogs from '@/assets/dogs.json'
+import dogs from "@/assets/dogs.json";
 
 export default {
   data() {
     return {
       dogs: dogs,
-      cartItems: ""
-    }
+      cartItems: "",
+    };
   },
-  
-}
+};
 </script>
 
 <style>
@@ -46,5 +42,4 @@ export default {
 #nav a.router-link-exact-active {
   color: #42b983;
 }
-
 </style>
