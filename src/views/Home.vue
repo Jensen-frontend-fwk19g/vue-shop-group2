@@ -3,7 +3,7 @@
 
 
     <CartCounter  :dogArray="dogArray" />
-    <MainPage  @dogEmit="pushToDogArray" :dogs="dogs" msg="Welcome to Your Vue.js App"/>
+    <MainPage  @addToCart="addToCart" :dogs="dogs" msg="Welcome to Your Vue.js App"/>
 
    
   </div>
@@ -33,11 +33,9 @@ export default {
   
 
   methods:{
-
-   pushToDogArray(dog) {
-    this.dogArray.push(dog);
+  addToCart(selectedDog) {
+  this.dogArray.push(selectedDog);
     }
-
   }
   
 }
