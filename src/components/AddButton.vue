@@ -13,8 +13,7 @@ export default {
     name: "AddButton",
     data: () => ({
         btnText: "Add to cart",
-        btnID: "",
-        btnClicked: false
+        btnClicked: false,
     }),
     props: {
         dog: Object
@@ -22,8 +21,8 @@ export default {
     methods: {
         addToCart() {
             this.btnText = "Added to cart"
-            this.btnID = this.dog.chipNumber
             this.btnClicked = true
+            this.$emit('addToCart', this.dog)             
         },
     },   
 }

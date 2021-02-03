@@ -12,7 +12,7 @@
     <section class="flex-container box-line price-container">
         <span class="dog-price price-font">Price: {{dog.price}}:-</span>
         
-              <AddButton  @click="addToCart" :dog="dog" />
+              <AddButton  @addToCart="addToCart" :dog="dog" />
 
     </section>
   </section>
@@ -34,8 +34,8 @@ export default {
        AddButton
    },
     methods: {
-         addToCart(){
-             this.$emit('addToCart', this.dog)             
+         addToCart(e){
+             this.$emit('addToCart', e)             
          }
     }
 }
