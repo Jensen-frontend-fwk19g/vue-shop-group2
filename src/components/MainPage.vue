@@ -5,7 +5,7 @@
     </header>
     <article class="container">
     <ProductCard
-        @dogEmit="listen"
+        @addToCart="listen"
         v-for="dog in dogs" 
         :key="dog.chipNumber" 
         :dog="dog"/>
@@ -29,7 +29,7 @@ export default {
   },
    methods:{
       listen(e){
-        this.$emit('dogEmit', e)
+        this.$emit('addToCart', e)
       }
   }
   
