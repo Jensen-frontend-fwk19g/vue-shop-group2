@@ -1,6 +1,6 @@
 <template>
   <section id="info-service">
-    <article class="header">
+    <article class="header" style="height:300px">
       <p class="holy-dog">HolyDog</p>
     </article>
     <article class="main">

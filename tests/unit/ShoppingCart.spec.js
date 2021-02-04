@@ -38,6 +38,32 @@ describe('ShoppingCart.vue', () => {
     });
     expect(wrapper.find('.shopping-cart-list').exists()).toBe(false);
   });
+
+  it("should display a price", () => {
+    // arrange
+    const wrapper = shallowMount(ShoppingCart, {
+      propsData: {
+        cartItems: getCartItemsFakeData(),
+      },
+    });
+    const expected = "1337";
+    // act
+    const actualText = wrapper.find(".total-cost").text();
+
+    // assert
+    expect(actualText).toMatch(expected);
+  });
+
+  it('should not show total cost if shopping list is empty', () => {
+    // arrange
+    const wrapper = shallowMount(ShoppingCart, {
+      propsData: {
+        cartItems: []
+      }
+    });
+    // assert
+    expect(wrapper.find('.total-cost').exists()).toBe(false);
+  });
 });
 
 
