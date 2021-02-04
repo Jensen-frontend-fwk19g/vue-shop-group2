@@ -1,6 +1,5 @@
 import { shallowMount } from "@vue/test-utils";
 import ShoppingCartItem from "@/components/ShoppingCartItem.vue";
-import ShoppingCart from "@/components/ShoppingCart.vue";
 
 describe("ShoppingCart.vue", () => {
   it("should display a name", async () => {
@@ -66,40 +65,6 @@ describe("ShoppingCart.vue", () => {
     // assert
     expect(actualText).toMatch(expected);
   });
-
-  // it("should display a price", async () => {
-  //   // arrange
-  //   const wrapper = await shallowMount(ShoppingCart, {
-  //     propsData: {
-
-  //         dog: getDog(),
-  //     },
-  //   });
-  //   const expected = "1337";
-  //   // act
-  //   const actual = await wrapper.find(".total-cost");
-  //   const actualText = await actual.text();
-
-  //   // assert
-  //   expect(actualText).toMatch(expected);
-  // });
-  // });
-
-  // it("should display a total price", async () => {
-  //   // arrange
-  //   const wrapper = await shallowMount(ShoppingCartItem, {
-  //     propsData: {
-  //       cartItems: getDog(),
-  //     },
-  //   });
-  //   const expected = "1337";
-  //   // act
-  //   const actual = await wrapper.find(".dog-price");
-  //   const actualText = await actual.text();
-
-  //   // assert
-  //   expect(actualText).toMatch(expected);
-  // });
 
   function getDog() {
     return {
