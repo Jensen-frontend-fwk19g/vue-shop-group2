@@ -59,13 +59,13 @@ describe("CartCounter.vue", () => {
         dogArray: fakeData(),
       },
     });
-
-    const arrayLength = fakeData().length;
+    const expectedArrayLength = 1
 
     // Act
-    const actualItems = parseInt(wrapper.find(".counter").text());
+    const actualItems = fakeData().length;
+
     // Assert
-    expect(actualItems).toBe(arrayLength);
+    expect(actualItems).toBe(expectedArrayLength);
   });
 });
 

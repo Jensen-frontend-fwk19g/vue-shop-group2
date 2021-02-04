@@ -2,7 +2,7 @@
   <div class="home">
 
 
-    <CartCounter  :cartItems="cartItems" />
+    <CartCounter :cartItems="cartItems" />
     <MainPage  @addToCart="listen" :dogs="dogs" msg="Welcome to Your Vue.js App"/>
 
    

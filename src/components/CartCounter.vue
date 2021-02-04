@@ -28,11 +28,16 @@ export default {
       },
       
   },
+
   computed:{
     numberOfDogs(){
+      if (this.numberOfDogs > 0) {
       return this.cartItems.length
+    } else {
+      return this.counter
     }
   }
+}
 }
 </script>
 
