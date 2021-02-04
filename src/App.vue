@@ -4,7 +4,7 @@
     <router-link to="/about">Cart</router-link> |
     <router-link to="/facilities">Facility</router-link>
 
-    <router-view :dogs="dogs" />
+    <router-view @addToCart="addToCart" :dogs="dogs" />
   </div>
 </template>
 
@@ -15,9 +15,16 @@ export default {
   data() {
     return {
       dogs: dogs,
-      cartItems: "",
+      cartItems: []
     };
   },
+
+    
+  methods:{
+  addToCart(selectedDog) {
+  this.cartItems.push(selectedDog);
+    }
+  }
 };
 </script>
 

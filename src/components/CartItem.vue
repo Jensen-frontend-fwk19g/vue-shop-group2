@@ -7,7 +7,7 @@
     <p class="dog-age">Age: {{dog.age}}</p>	
     <p class="dog-sex">Sex: {{dog.sex}}</p>	   
     <p class="dog-price">Price: {{dog.price}}:-</p>
-    <div class="desc-item">"Dog name is {{dog.name}}, breed is {{dog.breed}}...etc"</div>
+    <div class="desc-item" style="color:rgb(4, 145, 134);">"Dog name is {{dog.name}}, breed is {{dog.breed}}...etc"</div>
       <small>
         <button class="deleteBtn">&#10007;</button>
       </small>
