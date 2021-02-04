@@ -4,31 +4,29 @@
     <router-link to="/">Home</router-link> |
     <router-link to="/about">Cart</router-link> |
     <router-link to="/facilities">Facility</router-link>
-    <router-view @addToCart="addToCart" :dogs="dogs" />
+    <router-view @addToCart="addToCart" :dogs="dogs" :cartItems="cartItems" />
   </div>
 </template>
 
 <script>
 import dogs from "@/assets/dogs.json";
-import DarkModeButton from '@/components/DarkMode'
-
-
+import DarkModeButton from "@/components/DarkMode";
 
 export default {
   data() {
     return {
       dogs: dogs,
-      cartItems: []
+      cartItems: [],
     };
   },
   components: {
-    DarkModeButton
-  },  
-  methods:{
-  addToCart(selectedDog) {
-  this.cartItems.push(selectedDog);
-    }
-  }
+    DarkModeButton,
+  },
+  methods: {
+    addToCart(selectedDog) {
+      this.cartItems.push(selectedDog);
+    },
+  },
 };
 </script>
 
