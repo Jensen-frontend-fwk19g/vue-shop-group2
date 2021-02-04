@@ -4,7 +4,7 @@
     <router-link to="/">Home</router-link> |
     <router-link to="/about">Cart</router-link> |
     <router-link to="/facilities">Facility</router-link>
-    <router-view :dogs="dogs" />
+    <router-view @addToCart="addToCart" :dogs="dogs" />
   </div>
 </template>
 
@@ -18,20 +18,25 @@ export default {
   data() {
     return {
       dogs: dogs,
-      cartItems: "",
+      cartItems: []
     };
   },
   components: {
     DarkModeButton
+  },  
+  methods:{
+  addToCart(selectedDog) {
+  this.cartItems.push(selectedDog);
+    }
   }
 };
 </script>
 
 <style>
-
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
 
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Lato", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
