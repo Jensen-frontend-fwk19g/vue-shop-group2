@@ -104,15 +104,18 @@ describe('AddButton.vue', () => {
 		expect(wrapper.emitted().addToCart[0]).toEqual([actualCartOrder])
 		})
 
-		it('should not be able to hande more than one click', async () => {
+		it('should not be able to handle more than one click', async () => {
 			// arrange
 			const wrapper = shallowMount(AddButton)
 			const btn = wrapper.find('.add-button')
 			const expected = 1
 				
 			// act
-
+			await btn.trigger('click')
+			await btn.trigger('click')
+			const actual = wrapper.vm.btnCounter
 
 			// arrange
+			expect(actual).toBe(expected)
 		})
 })
