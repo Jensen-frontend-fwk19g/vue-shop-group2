@@ -1,50 +1,25 @@
 <template>
   <article id="cart">
     <h1 class="emptyCartText" v-if="isEmpty()">Shopping cart is empty</h1>
+  </article>
   <div v-if="!isEmpty()" class="shopping-cart-list">
-  
-    <ShoppingCartItem 
-      @click="removeItem(index)"
+    <ShoppingCartItem @click="removeItem(index)"
       v-for="(dog, index) in shoppingCartList"
       :key="dog.chipNumber"
       :dog="dog"
     />
     <p class="total-cost">Total cost: {{totalCost}} kr</p>
-      <!-- ----//To my test 'Emran' ------------------>
-      <br><br><hr><br> <hr>
-      <CartItem @click="removeItem(index)"
-          v-for="(dog,index) in shoppingCartList"
-          :key="index"
-          :id="dog.chipNumber"
-          :dog="dog"
-          />
-          <br><br><hr><br> <hr>
-          <!-- ---------------------- -->
   </div>
-    </article>
-
 </template>
 
 <script>
+  import ShoppingCartItem from "@/components/ShoppingCartItem";
 
-import ShoppingCartItem from "@/components/ShoppingCartItem";
-import CartItem from "@/components/CartItem";
-
-export default {
-  name: "Cart",
-  components: {
-    ShoppingCartItem,
-    CartItem,
-  },
-  computed: {
-    itemsInCart() {
-      if (this.showItem) {
-        return this.cartItems.length;
-      } else {
-        return 0;
-      }
+  export default {
+    name: 'Cart',
+    components: {
+      ShoppingCartItem,
     },
-  },
     props: {
       cartItems: Array,
       dogs: Array
@@ -78,5 +53,3 @@ export default {
   }
 
 </script>
-<style scoped>
-</style>

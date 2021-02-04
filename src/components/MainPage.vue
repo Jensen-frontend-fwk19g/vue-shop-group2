@@ -39,19 +39,9 @@ export default {
    
    
   },
-
-
-
-
-
    methods:{
       listen(e){
-        this.$emit('dogEmit', e)
-        this.sendtoCart(e)
-      },
-      sendtoCart(e) {
-        this.$emit('dogEmit', e)
-
+        this.$emit('addToCart', e)
       }
   }
 

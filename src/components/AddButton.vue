@@ -1,7 +1,7 @@
 <template>
 
-    <button
-    id="add-button" 
+    <button type="submit" :disabled="btnClicked"
+    class="add-button" 
     @click="addToCart()">
     {{ btnText }}
     </button>
@@ -13,7 +13,7 @@ export default {
     name: "AddButton",
     data: () => ({
         btnText: "Add to cart",
-        btnID: ""
+        btnClicked: false,
     }),
     props: {
         dog: Object
@@ -21,14 +21,15 @@ export default {
     methods: {
         addToCart() {
             this.btnText = "Added to cart"
-            this.btnID =  this.dog.chipNumber
-        }
-    }
+            this.btnClicked = true
+            this.$emit('addToCart', this.dog)             
+        },
+    },   
 }
 </script>
 
 <style scoped>
-#add-button {
+.add-button {
     width: 49%;
     background: chartreuse;
     font-size: 16px;
@@ -36,7 +37,7 @@ export default {
     transition: all 0.3s ease-out;
 }
 
-#add-button:hover {
+.add-button:hover {
     background: coral;
     font-size: 18px;
 }
