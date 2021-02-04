@@ -4,7 +4,6 @@
     <router-link to="/">Home</router-link> |
     <router-link to="/about">Cart</router-link> |
     <router-link to="/facilities">Facility</router-link>
-
     <router-view @addToCart="addToCart" :dogs="dogs" />
   </div>
 </template>
@@ -25,7 +24,7 @@ export default {
   components: {
     DarkModeButton
 
-  },
+  },  
   methods:{
   addToCart(selectedDog) {
   this.cartItems.push(selectedDog);
