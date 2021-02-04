@@ -59,6 +59,34 @@ export default {
 </script>
 <style scoped>
 .shopping-cart {
-  display: flex;
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 0.2rem;
+  margin: auto;
+  justify-items: center;
+}
+#cart {
+  width: 80%;
+  height: 100%;
+}
+
+.total-cost {
+  font-size: 2rem;
+  font-weight: 900;
+}
+.price {
+  color: red;
+}
+@media (min-width: 600px) and (max-width: 1200px) {
+  .shopping-cart-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 599px) {
+  .shopping-cart-list {
+    grid-template-columns: 1fr;
+  }
 }
 </style>
+
