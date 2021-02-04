@@ -8,8 +8,8 @@
       :key="dog.chipNumber"
       :dog="dog"
     />
-    <p class="total-cost">Total cost: {{ totalCost }} kr</p>
   </div>
+  <p class="total-cost">Total cost: <span class="price">{{ totalCost }} kr</span></p>
 </template>
 
 <script>
@@ -52,3 +52,34 @@ export default {
   },
 };
 </script>
+<style scoped>
+#cart {
+  width: 80%;
+  height: 100%;
+}
+.shopping-cart-list {
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 0.2rem;
+  margin: auto;
+  justify-items: center;
+}
+.total-cost{
+  font-size: 2rem;
+  font-weight: 900;
+}
+.price{
+  color: red;
+}
+@media (min-width: 600px) and (max-width: 1200px) {
+  .shopping-cart-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 599px) {
+  .shopping-cart-list {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
