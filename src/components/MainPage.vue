@@ -46,6 +46,7 @@ export default {
 
    methods:{
       listen(e){
+        this.$emit('addToCart', e)
         this.$emit('dogEmit', e)
         this.sendtoCart(e)
       },
