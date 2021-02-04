@@ -185,8 +185,16 @@ export default {
 }
 
 @media (min-width: 600px) and (max-width: 900px) {
+  .facilities,.promotion{
+    width: 100%;
+  }
+}
+@media   (max-width: 599px) {
   .container-description {
     flex-direction: column;
+  }
+   .facilities,.promotion{
+    width: 90%;
   }
 }
 </style>
