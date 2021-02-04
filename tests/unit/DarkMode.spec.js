@@ -6,24 +6,32 @@ describe("DarkMode.vue", () => {
     it("should display a button when mounted", () => {
     //mounts the darkMode-vue component    
     const wrapper = shallowMount(DarkMode);
-
+    
+    const acutal = wrapper.find(".dark-mode-toggle")
     //checks if button is there when mounted
-    expect(wrapper.html()).toBeTruthy(); 
+    expect(acutal).toBeTruthy(); 
   });
 
-  it("must return the inverse result of the initial value",async () => {
-
+  it("should change data value from false to true after click event",async () => {
+    
     const wrapper = shallowMount(DarkMode);
-
+    
+    //checks if data value is fales from start 
     expect(wrapper.vm.darkMode).toBe(false);
-    const button = wrapper.find('a')
-    await button.trigger('click');
-    
-    expect(wrapper.vm.darkMode).toBe(true);
+
+    //finds the button element and click once to trigger event
+    const checkbox = wrapper.find('input[type="checkbox"]')
+    await checkbox.setChecked()
+
+    //checks if data value is true after click event 
+    //expect(wrapper.vm.darkMode).toBe(true);
+     
+   expect(checkbox.element.checked).toBeTruthy()
+   expect(wrapper.vm.darkMode).toBe(true);
+
     });
-    
-    /*
-        // const actual =  wrapper.find("#dark-button");
-      // const expected = '<a href="" id="dark-button"></a>';
-  */
+  
+  it("should change the button icon when switching from light to dark mode", () => {
+
+  })
 });

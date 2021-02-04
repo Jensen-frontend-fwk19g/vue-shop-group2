@@ -71,6 +71,24 @@ export default {
                 "lastName":"Svensson",
                 "phoneNumber":"0769239356"
                 },
+                
+            quantity:1,
+            price:399,
+        },
+        {
+            "name":"Molly",
+            "sex":"female",
+            "breed":"briard",
+            "img":"https://images.dog.ceo/breeds/briard/n02105251_6840.jpg",
+            "present":false,
+            "age":4,
+            "chipNumber":"IEH455006",
+              "owner":{
+                "name":"Wilmer",
+                "lastName":"Svensson",
+                "phoneNumber":"0769239356"
+                },
+                
             quantity:1,
             price:399,
         }

@@ -1,82 +1,85 @@
 <template>
   <article id="cart">
     <h1 class="emptyCartText" v-if="isEmpty()">Shopping cart is empty</h1>
+  </article>
   <div v-if="!isEmpty()" class="shopping-cart-list">
-  
-    <ShoppingCartItem 
-      @click="removeItem(index)"
-      v-for="(dog, index) in shoppingCartList"
+    <ShoppingCartItem
+      v-for="dog in shoppingCartList"
       :key="dog.chipNumber"
       :dog="dog"
     />
-    <p class="total-cost">Total cost: {{totalCost}} kr</p>
-      <!-- ----//To my test 'Emran' ------------------>
-      <br><br><hr><br> <hr>
-      <CartItem @click="removeItem(index)"
-          v-for="(dog,index) in shoppingCartList"
-          :key="index"
-          :id="dog.chipNumber"
-          :dog="dog"
-          />
-          <br><br><hr><br> <hr>
-          <!-- ---------------------- -->
   </div>
-    </article>
-
+  <p class="total-cost">Total cost: <span class="price">{{ totalCost }} kr</span></p>
 </template>
 
 <script>
-
 import ShoppingCartItem from "@/components/ShoppingCartItem";
-import CartItem from "@/components/CartItem";
 
 export default {
   name: "Cart",
   components: {
     ShoppingCartItem,
-    CartItem,
   },
-  computed: {
-    itemsInCart() {
-      if (this.showItem) {
-        return this.cartItems.length;
-      } else {
-        return 0;
-      }
-    },
+  props: {
+    cartItems: Array,
+    dogs: Array,
   },
-    props: {
-      cartItems: Array,
-      dogs: Array
+  beforeMount() {
+    this.shoppingCartList = this.cartItems;
+    this.updateTotalCost();
+  },
+  data() {
+    return {
+      shoppingCartList: [],
+      totalCost: 0,
+    };
+  },
+  methods: {
+    isEmpty() {
+      return this.shoppingCartList < 1;
     },
-    beforeMount() {
-      this.shoppingCartList = this.cartItems;
+    removeItem(index) {
+      this.shoppingCartList.splice(index, 1);
       this.updateTotalCost();
     },
-    data(){
-      return{
-        shoppingCartList: [],
-        totalCost: 0
-      }
+    updateTotalCost() {
+      let totalCost = 0;
+      this.shoppingCartList.forEach((entry) => {
+        totalCost += entry.price;
+      });
+      this.totalCost = totalCost;
     },
-    methods: {
-      isEmpty() {
-        return this.shoppingCartList < 1;
-      },
-      removeItem(index){
-        this.shoppingCartList.splice(index,1);
-        this.updateTotalCost();
-      },
-      updateTotalCost() {
-        let totalCost = 0;
-        this.shoppingCartList.forEach(entry => {
-          totalCost += entry.price;
-        });
-        this.totalCost = totalCost;
-      }
-    },
-  }
-
+  },
+};
 </script>
 <style scoped>
+#cart {
+  width: 80%;
+  height: 100%;
+}
+.shopping-cart-list {
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 0.2rem;
+  margin: auto;
+  justify-items: center;
+}
+.total-cost{
+  font-size: 2rem;
+  font-weight: 900;
+}
+.price{
+  color: red;
+}
+@media (min-width: 600px) and (max-width: 1200px) {
+  .shopping-cart-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 599px) {
+  .shopping-cart-list {
+    grid-template-columns: 1fr;
+  }
+}
 </style>

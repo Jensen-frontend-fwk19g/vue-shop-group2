@@ -21,32 +21,30 @@ describe("Facilities.vue & MainFacilities.vue", () => {
     expect(header.exists()).toBe(true);
   });
 
-  // it("should, when the component is mounted,to check if there is a class description", () => {
-  //   const wrapper = shallowMount(MainFacilities);
-  //   const description = wrapper.find(".header").attributes();
+  it("should, when the component is mounted,to check if there is a class description", () => {
+    const wrapper = shallowMount(MainFacilities);
+    const actualStyle = wrapper.find(".header");
+    const expected = "300px";
+    expect(actualStyle.element.style.height).toBe(expected);
+  });
 
-  //   expect(wrapper.find(".header").attributes().style).toBe(
-  //     'background: url("./../assets/banner.webp")'
-  //   );
-  // });
-
-  it('should route when btn is clicked and the router should be called', async() => {
+  it("should route when btn is clicked and the router should be called", async () => {
     const mockRoute = {
-      path:'/MainFacilities/Form/'
-    }
+      path: "/MainFacilities/Form/",
+    };
     const mockRouter = {
-      push: jest.fn()
-    }
+      push: jest.fn(),
+    };
     const wrapper = shallowMount(MainFacilities, {
       global: {
         mocks: {
           $route: mockRoute,
-          $router: mockRouter
-        }
-      }
-    })
-    await wrapper.find('.become').trigger('click')
-    //expect(mockRouter.push).toHaveBeenCalledWith('/MainFacilities/Form/');
-    expect(mockRoute.path).toBe('/MainFacilities/Form/');
-  });  
+          $router: mockRouter,
+        },
+      },
+    });
+    await wrapper.find(".become").trigger("click");
+    expect(mockRouter.push).toHaveBeenCalledWith("/MainFacilities/Form/");
+    expect(mockRoute.path).toBe("/MainFacilities/Form/");
+  });
 });
