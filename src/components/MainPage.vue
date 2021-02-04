@@ -30,7 +30,6 @@ export default {
       dogData:{}
     }
   },
-
   components: {
     ProductCard
   },
@@ -39,27 +38,11 @@ export default {
    
    
   },
-
-
-
-
-
    methods:{
       listen(e){
         this.$emit('addToCart', e)
-        this.$emit('dogEmit', e)
-        this.sendtoCart(e)
-      },
-      sendtoCart(e) {
-        this.$emit('dogEmit', e)
-
       }
   }
-
-  
-
-
-
 }
 </script>
 
@@ -76,5 +59,7 @@ export default {
   height: 200px;
 }
 
-
+.hidden {
+  display: none;
+}
 </style>
