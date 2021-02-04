@@ -1,15 +1,18 @@
 <template>
   <div id="nav">
+    <DarkModeButton />
     <router-link to="/">Home</router-link> |
     <router-link to="/about">Cart</router-link> |
     <router-link to="/facilities">Facility</router-link>
-
-    <router-view @addToCart="addToCart" :dogs="dogs" />
+    <router-view @addToCart="addToCart" :cartItems="cartItems" :dogs="dogs" />
   </div>
 </template>
 
 <script>
 import dogs from "@/assets/dogs.json";
+import DarkModeButton from '@/components/DarkMode'
+
+
 
 export default {
   data() {
@@ -18,8 +21,9 @@ export default {
       cartItems: []
     };
   },
-
-    
+  components: {
+    DarkModeButton
+  },  
   methods:{
   addToCart(selectedDog) {
   this.cartItems.push(selectedDog);
@@ -30,6 +34,7 @@ export default {
 
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
+
 #app {
   font-family: "Lato", sans-serif;
   -webkit-font-smoothing: antialiased;

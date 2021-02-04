@@ -1,6 +1,6 @@
 <template>
   <section id="counter-cart">
-    <figure>
+    <figure class="counter-container">
       <div class="counter">{{numberOfDogs}}</div>
       <img class="bag" src="@/assets/bag.png" alt="Cart">
     </figure>
@@ -16,7 +16,7 @@ export default {
     }
   },
   props: {
-    dogArray: Array
+    cartItems: Array
   },
   
   methods: {
@@ -30,7 +30,7 @@ export default {
   },
   computed:{
     numberOfDogs(){
-      return this.dogArray.length
+      return this.cartItems.length
     }
   }
 }
