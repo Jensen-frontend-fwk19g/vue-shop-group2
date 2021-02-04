@@ -1,6 +1,6 @@
 <template>
   <section id="counter-cart">
-    <figure>
+    <figure class="counter-container">
       <div class="counter">{{numberOfDogs}}</div>
       <img class="bag" src="@/assets/bag.png" alt="Cart">
     </figure>
