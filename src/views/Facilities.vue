@@ -1,4 +1,5 @@
 <template>
+<section id="facilities"></section>
   <MainFacilities />
 </template>
 
@@ -12,4 +13,8 @@ export default {
 };
 </script>
 
-<style scoped></style>>
+<style scoped>
+#facilities{
+ 
+}
+</style>>
