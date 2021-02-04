@@ -1,15 +1,18 @@
 <template>
   <div id="nav">
+    <DarkModeButton />
     <router-link to="/">Home</router-link> |
     <router-link to="/about">Cart</router-link> |
     <router-link to="/facilities">Facility</router-link>
-
     <router-view :dogs="dogs" />
   </div>
 </template>
 
 <script>
 import dogs from "@/assets/dogs.json";
+import DarkModeButton from '@/components/DarkMode'
+
+
 
 export default {
   data() {
@@ -18,10 +21,15 @@ export default {
       cartItems: "",
     };
   },
+  components: {
+    DarkModeButton
+  }
 };
 </script>
 
 <style>
+
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
