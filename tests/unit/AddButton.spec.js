@@ -5,44 +5,45 @@ import AddButton from "@/components/AddButton.vue";
 
 describe('AddButton.vue', () => {
 
-	it('should display button element when component mounted', () => {
-		// arrange
-		const wrapper = shallowMount(AddButton)
-		const btn = wrapper.find('button')
+		it('should display button element when component mounted', () => {
+			// arrange
+			const wrapper = shallowMount(AddButton)
+			const btn = wrapper.find('button')
 
-		// act
-		const actual = btn.exists()
+			// act
+			const actual = btn.exists()
+			
+			// assert
+			expect(actual).toBeTruthy()
+		})
+
+		it('should display a button with text "Add to cart" when component mounted', () => {
+			// arrange
+			const wrapper = shallowMount(AddButton)
+			wrapper.setData({ btnText: "Add to cart"})
+			const btn = wrapper.find('button')
+			const expected = wrapper.vm.btnText
+
+			// act
+			const actual = btn.text()
+			
+			// assert
+			expect(actual).toBe(expected)
+		})
 		
-		// assert
-		expect(actual).toBeTruthy()
-	})
+		it('it should display "Added to cart" when button clicked', async () => {
+			// arrange
+			const wrapper = shallowMount(AddButton)
+			const btn = wrapper.find('button')
+			const expected = 'Added to cart'
+			
+			// act
+			await wrapper.trigger('click')
+			const actual = btn.text()
 
-	it('should display a button with text "Add to cart" when component mounted', () => {
-		// arrange
-		const wrapper = shallowMount(AddButton)
-		wrapper.setData({ btnText: "Add to cart"})
-		const btn = wrapper.find('button')
-		const expected = wrapper.vm.btnText
-
-		// act
-		const actual = btn.text()
-		
-		// assert
-		expect(actual).toBe(expected)
-	})
-	
-	it('it should display "Added to cart" when button clicked', async () => {
-		// arrange
-	   	const wrapper = shallowMount(AddButton)
-		const expected = 'Added to cart'
-		
-		// act
-		await wrapper.trigger('click')
-		const actual = wrapper.text()
-
-		// assert
-		expect(actual).toBe(expected)
-	})
+			// assert
+			expect(actual).toBe(expected)
+		})
 
 		it('should show a button element not disabled when component mounted', () => {
 	   	// arrange
@@ -102,5 +103,16 @@ describe('AddButton.vue', () => {
 		expect(wrapper.emitted().addToCart.length).toBe(1)
 		expect(wrapper.emitted().addToCart[0]).toEqual([actualCartOrder])
 		})
-})
 
+		it('should not be able to hande more than one click', async () => {
+			// arrange
+			const wrapper = shallowMount(AddButton)
+			const btn = wrapper.find('.add-button')
+			const expected = 1
+				
+			// act
+
+
+			// arrange
+		})
+})
