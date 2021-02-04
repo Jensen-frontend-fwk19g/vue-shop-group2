@@ -30,23 +30,23 @@ describe("Facilities.vue & MainFacilities.vue", () => {
   //   );
   // });
 
-  it('should route when btn is clicked and the router should be called', async() => {
+  it("should route when btn is clicked and the router should be called", async () => {
     const mockRoute = {
-      path:'/MainFacilities/Form/'
-    }
+      path: "/MainFacilities/Form/",
+    };
     const mockRouter = {
-      push: jest.fn()
-    }
+      push: jest.fn(),
+    };
     const wrapper = shallowMount(MainFacilities, {
       global: {
         mocks: {
           $route: mockRoute,
-          $router: mockRouter
-        }
-      }
-    })
-    await wrapper.find('.become').trigger('click')
-    //expect(mockRouter.push).toHaveBeenCalledWith('/MainFacilities/Form/');
-    expect(mockRoute.path).toBe('/MainFacilities/Form/');
-  });  
+          $router: mockRouter,
+        },
+      },
+    });
+    await wrapper.find(".become").trigger("click");
+    expect(mockRouter.push).toHaveBeenCalledWith("/MainFacilities/Form/");
+    expect(mockRoute.path).toBe("/MainFacilities/Form/");
+  });
 });
