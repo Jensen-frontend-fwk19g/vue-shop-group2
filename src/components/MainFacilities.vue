@@ -76,7 +76,7 @@
         </div>
       </section>
       <section class="become-petsitter">
-        <button class="become">Become a pet sitter</button>
+        <button class="become" @click="routeTo()" >Become a pet sitter</button>
         <p class="adv">
           We do not take commissions on the performance of our pet sitters. 100%
           free, not like our competitors!
@@ -92,6 +92,11 @@ dfafas
 <script>
 export default {
   name: "MainFacilities",
+  methods:{
+      routeTo(){
+        this.$router.push('/MainFacilities/Form/');
+      }
+  },
 };
 </script>
 
@@ -152,4 +157,31 @@ export default {
 .footer{
   max-height: 20%;
 }
+.become{
+  outline: none;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  margin: 2px 0;
+  border: solid 1px transparent;
+  border-radius: 4px;
+  padding: 0.5em 1em;
+  color: #ffffff;
+  background-color: #ab2866;
+}
+.become:active {
+  transform: translateY(1px);
+  filter: saturate(150%);
+}
+.become:hover {
+  color: #ab2866;
+  border-color: currentColor;
+  background-color: white;
+}
+.become:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 105, 180, 0.5),
+    0 0 0 1.5px rgba(255, 105, 180, 0.5);
+}
+
 </style>

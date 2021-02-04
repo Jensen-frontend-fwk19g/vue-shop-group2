@@ -1,6 +1,8 @@
 import { shallowMount } from "@vue/test-utils";
 import AddButton from "@/components/AddButton.vue";
 
+
+
 describe('AddButton.vue', () => {
 
 	it('should display button element when component mounted', () => {
@@ -101,3 +103,4 @@ describe('AddButton.vue', () => {
 		expect(wrapper.emitted().addToCart[0]).toEqual([actualCartOrder])
 		})
 })
+
