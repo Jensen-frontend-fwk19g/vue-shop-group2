@@ -1,7 +1,7 @@
 <template>
   <section id="counter-cart">
     <figure class="counter-container">
-      <div class="counter">{{numberOfDogs}}</div>
+      <div class="counter" v-if='cartItems'>{{numberOfDogs}}</div>
       <img class="bag" src="@/assets/bag.png" alt="Cart">
     </figure>
   </section>
@@ -31,11 +31,8 @@ export default {
 
   computed:{
     numberOfDogs(){
-      if (this.numberOfDogs > 0) {
       return this.cartItems.length
-    } else {
-      return this.counter
-    }
+    
   }
 }
 }

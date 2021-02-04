@@ -21,14 +21,12 @@ describe("Facilities.vue & MainFacilities.vue", () => {
     expect(header.exists()).toBe(true);
   });
 
-  // it("should, when the component is mounted,to check if there is a class description", () => {
-  //   const wrapper = shallowMount(MainFacilities);
-  //   const description = wrapper.find(".header").attributes();
-
-  //   expect(wrapper.find(".header").attributes().style).toBe(
-  //     'background: url("./../assets/banner.webp")'
-  //   );
-  // });
+  it("should, when the component is mounted,to check if there is a class description", () => {
+    const wrapper = shallowMount(MainFacilities);
+    const actualStyle = wrapper.find(".header");
+    const expected = "300px";
+    expect(actualStyle.element.style.height).toBe(expected);
+  });
 
   it("should route when btn is clicked and the router should be called", async () => {
     const mockRoute = {
