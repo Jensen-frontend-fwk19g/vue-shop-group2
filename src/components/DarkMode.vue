@@ -45,6 +45,10 @@ html[data-theme='dark-mode'] img{
     filter: invert(100%) hue-rotate(180deg);
 
 }
+html[data-theme='dark-mode'] .header{
+    filter: invert(100%) hue-rotate(180deg);
+
+}
 html[data-theme='dark-mode'] .bag{
     filter: invert(0%) hue-rotate(0deg);
 
