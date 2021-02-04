@@ -51,7 +51,7 @@ describe("CartCounter.vue", () => {
     // expect(btnCard).toBe(true);
     
     // //assert
-    expect(wrapper.emitted().dogEmit).toBeTruthy();
+    expect(wrapper.emitted().addToCart).toBeTruthy();
   });
 
 

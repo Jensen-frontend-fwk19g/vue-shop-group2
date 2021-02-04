@@ -85,11 +85,11 @@ describe('ShoppingCart.vue', () => {
 
 it('should display a total price', async () => {
   // arrange
-  const wrapper = await shallowMount(ShoppingCart, {
+  const wrapper = await shallowMount(ShoppingCartItem, {
     propsData: {
-      cartItems: getCartItemsMock()
-    }
-  })
+      cartItems: getDog(),
+    },
+  });
   const expected = "1337";
   // act
   const actual = await wrapper.find('.total-cost')
