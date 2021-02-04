@@ -1,6 +1,7 @@
 import { shallowMount } from "@vue/test-utils";
 import CartCounter from "@/components/CartCounter.vue";
 import ProductCard from "@/components/ProductCard.vue";
+import AddButton from "@/components/AddButton.vue";
 
 describe("CartCounter.vue", () => {
   it("should display,when the page is mounted, the img of the bag inside the cart ", () => {
@@ -35,25 +36,22 @@ describe("CartCounter.vue", () => {
 
   it("should emit an event when the add button is pressed", async () => {
     //arrange
-    const wrapper = shallowMount(ProductCard, {
+    const wrapper = shallowMount(AddButton, {
       propsData: {
-        dog: fakeData()[0]
+        dog: fakeData()[0],
       },
     });
 
-
     //act
-    const btnAdd = wrapper.find(".buy-button");
+    const btnAdd = wrapper.find("button");
     await btnAdd.trigger("click");
-    
 
     //expect(productCard).toBe(true);
     // expect(btnCard).toBe(true);
-    
+
     // //assert
     expect(wrapper.emitted().addToCart).toBeTruthy();
   });
-
 
   it("should display the numbers of items bought in the cardCounter", async () => {
     const wrapper = shallowMount(CartCounter, {
