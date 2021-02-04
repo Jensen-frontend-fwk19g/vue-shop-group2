@@ -104,7 +104,7 @@ export default {
 .header {
   width: 100%;
   height: 300px;
-  background-image: url("./../assets/banner.webp");
+  background: url("./../assets/banner.webp");
   background-position: center;
   background-size: 100%;
   background-repeat: no-repeat;
