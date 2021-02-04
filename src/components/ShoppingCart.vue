@@ -3,11 +3,14 @@
     <h1 class="emptyCartText" v-if="isEmpty()">Shopping cart is empty</h1>
   </article>
   <div v-if="!isEmpty()" class="shopping-cart-list">
-    <ShoppingCartItem
-      v-for="dog in shoppingCartList"
-      :key="dog.chipNumber"
-      :dog="dog"
-    />
+    <div class="shopping-cart">
+      <ShoppingCartItem
+        v-for="dog in shoppingCartList"
+        :key="dog.chipNumber"
+        :dog="dog"
+        @removeDog="removeItem(dog)"
+      />
+    </div>
     <p class="total-cost">Total cost: {{ totalCost }} kr</p>
   </div>
 </template>
@@ -38,8 +41,10 @@ export default {
     isEmpty() {
       return this.shoppingCartList < 1;
     },
-    removeItem(index) {
-      this.shoppingCartList.splice(index, 1);
+    removeItem(dog) {
+      this.shoppingCartList = this.shoppingCartList.filter(
+        (entry) => entry !== dog
+      );
       this.updateTotalCost();
     },
     updateTotalCost() {
@@ -52,3 +57,8 @@ export default {
   },
 };
 </script>
+<style scoped>
+.shopping-cart {
+  display: flex;
+}
+</style>
