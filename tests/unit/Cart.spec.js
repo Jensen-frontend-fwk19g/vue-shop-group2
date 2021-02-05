@@ -34,7 +34,7 @@ describe('Cart.vue', () => {
   });
   it('should decrease the items in cart when the user click on the [X] button.', async () => {
     const wrapper   = shallowMount(Cart);
-    const expected  = wrapper.vm.cart.length -1;
+    const expected  = wrapper.vm.cart.length -2;
     await wrapper.find('.deleteBtn').trigger('click');
     const actual    = wrapper.find('.item-in-cart-cls').text();
     expect(parseInt(actual)).toBe(expected);
