@@ -66,6 +66,20 @@ describe("ShoppingCart.vue", () => {
     expect(actualText).toMatch(expected);
   });
 
+  it('calls remove() when pressing remove button', () => {
+    const wrapper = shallowMount(ShoppingCartItem, {
+      props: {
+        dog: getDog()
+      }
+    });
+    const removeButton = wrapper.find('.remove-button')
+    removeButton.trigger('click')
+    const removeDog = wrapper.vm.dog
+    expect(wrapper.emitted().removeDog).toBeTruthy()
+    expect(wrapper.emitted().removeDog.length).toBe(1)
+    expect(wrapper.emitted().removeDog[0]).toEqual([removeDog])
+  })
+
   function getDog() {
     return {
       name: "DOGE",

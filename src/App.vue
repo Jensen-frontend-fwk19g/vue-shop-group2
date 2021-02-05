@@ -4,6 +4,7 @@
     <router-link to="/">Home</router-link> |
     <router-link to="/about">Cart</router-link> |
     <router-link to="/facilities">Facility</router-link>
+
     <router-view @addToCart="addToCart" :dogs="dogs" :cartItems="cartItems" />
   </div>
 </template>
@@ -39,6 +40,8 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  width: 100vw;
+  height: 100vh;
 }
 
 #nav {

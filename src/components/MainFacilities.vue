@@ -76,7 +76,7 @@
         </div>
       </section>
       <section class="become-petsitter">
-        <button class="become" @click="routeTo()" >Become a pet sitter</button>
+        <button class="become" @click="routeTo()">Become a pet sitter</button>
         <p class="adv">
           We do not take commissions on the performance of our pet sitters. 100%
           free, not like our competitors!
@@ -84,18 +84,22 @@
       </section>
     </article>
     <footer class="footer">
-dfafas
+      <Footer></Footer>
     </footer>
   </section>
 </template>
 
 <script>
+import Footer from "@/components/Footer.vue";
 export default {
   name: "MainFacilities",
-  methods:{
-      routeTo(){
-        this.$router.push('/MainFacilities/Form/');
-      }
+    components:{
+    Footer,
+  },
+  methods: {
+    routeTo() {
+      this.$router.push("/MainFacilities/Form/");
+    },
   },
 };
 </script>
@@ -114,7 +118,7 @@ export default {
   background-size: 100%;
   background-repeat: no-repeat;
 }
-.holy-dog{
+.holy-dog {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -150,14 +154,15 @@ export default {
   background-color: rgba(98, 166, 243, 0.94);
   margin-right: 0.5rem;
 }
-.adv{
+.adv {
   font-weight: 700;
   padding: 1rem;
 }
-.footer{
+.footer {
   max-height: 20%;
+  display:flex; 
 }
-.become{
+.become {
   outline: none;
   display: inline-block;
   text-align: center;
@@ -184,4 +189,17 @@ export default {
     0 0 0 1.5px rgba(255, 105, 180, 0.5);
 }
 
+@media (min-width: 600px) and (max-width: 900px) {
+  .facilities,.promotion{
+    width: 100%;
+  }
+}
+@media   (max-width: 599px) {
+  .container-description {
+    flex-direction: column;
+  }
+   .facilities,.promotion{
+    width: 90%;
+  }
+}
 </style>

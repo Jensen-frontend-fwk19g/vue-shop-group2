@@ -14,6 +14,7 @@ export default {
     data: () => ({
         btnText: "Add to cart",
         btnClicked: false,
+        btnCounter: 0
     }),
     props: {
         dog: Object
@@ -22,6 +23,7 @@ export default {
         addToCart() {
             this.btnText = "Added to cart"
             this.btnClicked = true
+            this.btnCounter++
             this.$emit('addToCart', this.dog)             
         },
     },   

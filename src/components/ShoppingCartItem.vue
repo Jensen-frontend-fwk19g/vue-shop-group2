@@ -6,6 +6,7 @@
     <p class="dog-age">Age: {{ dog.age }}</p>
     <p class="dog-sex">Sex: {{ dog.sex }}</p>
     <p class="dog-price">Price: {{ dog.price }}:-</p>
+    <button class="remove-button" @click="removeDog()">remove</button>
   </section>
 </template>
 
@@ -15,6 +16,12 @@ export default {
   props: {
     dog: Object,
   },
+  methods: {
+    removeDog() {
+      this.$emit("removeDog", this.dog);
+    },
+  },
+  emits: ["removeDog"],
 };
 </script>
 
