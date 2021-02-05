@@ -1,6 +1,6 @@
 
 # Discord Contact 
-- Sanel
+- Sanel Jasarevic
 - Ran (OM_DHR)
 - Synnerax (Elliot Berggren)
 - Markus Bjerkhede
@@ -22,7 +22,7 @@
 7. As a customer i want to be able to have a mobile friendly version of the website.
 
 
-![Toy Shop](https://github.com/Jensen-frontend-fwk19g/vue-shop-group2/blob/main/src/assets/banner.webp "Toy Shop")
+![Dog Center](https://github.com/Jensen-frontend-fwk19g/vue-shop-group2/blob/main/src/assets/banner.webp "Toy Shop")
 ------------
 ### Available link 
 - **[Trello working team](https://trello.com/b/PupblE89/vue-shophttp:// "Trello working team")**
