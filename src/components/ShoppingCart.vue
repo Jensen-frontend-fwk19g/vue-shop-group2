@@ -8,10 +8,10 @@
         v-for="dog in shoppingCartList"
         :key="dog.chipNumber"
         :dog="dog"
-        @removeDog="removeItem(dog)"
+        @removeDog="removeItem(dog)"  
       />
     </div>
-    <p class="total-cost">Total cost: {{ totalCost }} kr</p>
+   <p class="total-cost">Total cost: {{ totalCost }} kr</p>
   </div>
 </template>
 

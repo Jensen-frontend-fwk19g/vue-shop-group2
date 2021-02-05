@@ -54,6 +54,22 @@ describe('ShoppingCart.vue', () => {
     expect(actualText).toMatch(expected);
   });
 
+  it('should display a total price', async () => {
+    // arrange
+    const wrapper = await shallowMount(ShoppingCart, {
+      propsData: {
+        cartItems: getCartItemsFakeData()
+      }
+    })
+    const expected = "1337";
+    // act
+    const actual = await wrapper.find('.total-cost')
+    const actualText = await actual.text()
+
+    // assert
+    expect(actualText).toMatch(expected)
+  });
+
   it('should not show total cost if shopping list is empty', () => {
     // arrange
     const wrapper = shallowMount(ShoppingCart, {
