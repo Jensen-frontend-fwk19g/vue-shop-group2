@@ -84,14 +84,18 @@
       </section>
     </article>
     <footer class="footer">
-      dfafas
+      <Footer></Footer>
     </footer>
   </section>
 </template>
 
 <script>
+import Footer from "@/components/Footer.vue";
 export default {
   name: "MainFacilities",
+    components:{
+    Footer,
+  },
   methods: {
     routeTo() {
       this.$router.push("/MainFacilities/Form/");
@@ -156,6 +160,7 @@ export default {
 }
 .footer {
   max-height: 20%;
+  display:flex; 
 }
 .become {
   outline: none;
