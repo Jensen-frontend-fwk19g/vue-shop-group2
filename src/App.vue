@@ -5,7 +5,8 @@
     <router-link to="/about">Cart</router-link> |
     <router-link to="/facilities">Facility</router-link>
 
-    <router-view @addToCart="addToCart" :dogs="dogs" :cartItems="cartItems" />
+    <router-view @addToCart="addToCart" @removeDog="removeFromCart" :dogs="dogs" :cartItems="cartItems" />
+
   </div>
 </template>
 
@@ -27,6 +28,11 @@ export default {
     addToCart(selectedDog) {
       this.cartItems.push(selectedDog);
     },
+    removeFromCart(dog)
+    {
+      this.cartItems = this.cartItems.filter(item => dog != item)
+      console.log('removeFromCart(dog)')
+      },
   },
 };
 </script>

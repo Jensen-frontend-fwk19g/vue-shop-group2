@@ -10,8 +10,9 @@
         :dog="dog"
         @removeDog="removeItem(dog)"
       />
+      <p class="total-cost">Total cost: {{ totalCost }} kr</p>
     </div>
-    <p class="total-cost">Total cost: {{ totalCost }} kr</p>
+    
   </div>
 </template>
 
@@ -45,6 +46,7 @@ export default {
       this.shoppingCartList = this.shoppingCartList.filter(
         (entry) => entry !== dog
       );
+      this.$emit("removeDog", dog);
       this.updateTotalCost();
     },
     updateTotalCost() {
@@ -55,6 +57,7 @@ export default {
       this.totalCost = totalCost;
     },
   },
+  emits: ["removeDog"]
 };
 </script>
 <style scoped>
