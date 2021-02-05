@@ -23,7 +23,7 @@
 8. As a customer I want to have a dark-mode option for the web-page.
 
 
-![Dog Center](https://github.com/Jensen-frontend-fwk19g/vue-shop-group2/blob/main/src/assets/banner.webp "Toy Shop")
+![Dog Center](https://github.com/Jensen-frontend-fwk19g/vue-shop-group2/blob/main/src/assets/banner.webp "Dog Center")
 ------------
 ### Available link 
 - **[Trello working team](https://trello.com/b/PupblE89/vue-shophttp:// "Trello working team")**
