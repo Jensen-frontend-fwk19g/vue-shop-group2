@@ -13,13 +13,14 @@
 
 ------------
 ## User stories  Features
-1. As a customer i want to be able to see how many items is in my cart.
-2. As a customer i want to be able to add products to the cart.
+1. As a customer I want to be able to see how many items is in my cart.
+2. As a customer I want to be able to add products to the cart.
 3. As a customer I want to be able to delete a product in for the cart.
-4. As a customer i want to see a clear view of the products on the landing page.
-5. As a customer i want to see easily see the price of the products.
-6. As a customer i want to be able to see total cost for the products in my cart.
-7. As a customer i want to be able to have a mobile friendly version of the website.
+4. As a customer I want to see a clear view of the products on the landing page.
+5. As a customer I want to see easily see the price of the products.
+6. As a customer I want to be able to see total cost for the products in my cart.
+7. As a customer I want to be able to have a mobile friendly version of the website.
+8. As a customer I want to have a dark-mode option for the web-page.
 
 
 ![Dog Center](https://github.com/Jensen-frontend-fwk19g/vue-shop-group2/blob/main/src/assets/banner.webp "Toy Shop")
