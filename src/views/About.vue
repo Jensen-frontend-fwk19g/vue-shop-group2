@@ -1,21 +1,22 @@
 <template>
   <div class="about">
-    <header> 
+    <header>
       <h1>Cart Page you can find all the dogs you are going to pay</h1>
     </header>
-   
-      <MainCart/>
-      <Cart/>
+    <ShoppingCart :dogs="dogs" :cartItems="cartItems" />
   </div>
 </template>
 <script>
-import Cart from '@/components/Cart.vue';
-import MainCart from '@/components/MainCart.vue';
+import ShoppingCart from "@/components/ShoppingCart.vue";
+
 export default {
-  name:'',
-  components:{
-    Cart,
-    MainCart
-  }
-}
+  name: "",
+  components: {
+    ShoppingCart,
+  },
+  props: {
+    dogs: Array,
+    cartItems: Array,
+  },
+};
 </script>
