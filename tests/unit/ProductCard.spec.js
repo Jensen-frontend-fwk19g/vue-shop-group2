@@ -105,13 +105,12 @@ it("should emit the dog chosen ", async () => {
 
   const wrapper = mount(MainPage);
   // //act
-  wrapper.vm.$emit("dogToEmit");
-  wrapper.vm.$emit("dogToEmit", "Molly");
+  wrapper.vm.$emit("addToCart");
+  wrapper.vm.$emit("addToCart", "Molly");
 
   await wrapper.vm.$nextTick();
   await wrapper.vm.$nextTick();
   // //assert
-
-  expect(wrapper.emitted().dogToEmit).toBeTruthy();
-  expect(wrapper.emitted().dogToEmit[1][0]).toEqual("Molly");
+  expect(wrapper.emitted().addToCart).toBeTruthy();
+  expect(wrapper.emitted().addToCart[1][0]).toEqual("Molly");
 });
