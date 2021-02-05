@@ -1,6 +1,5 @@
 import { shallowMount } from "@vue/test-utils";
 import CartCounter from "@/components/CartCounter.vue";
-import ProductCard from "@/components/ProductCard.vue";
 import AddButton from "@/components/AddButton.vue";
 
 describe("CartCounter.vue", () => {
@@ -12,24 +11,28 @@ describe("CartCounter.vue", () => {
       },
     });
     const expectedHtml = '<img class="bag" src="" alt="Cart">';
+
     //act
     const actualHtml = wrapper.find(".bag").html();
     console.log(actualHtml);
+
     //assert
     expect(actualHtml).toBe(expectedHtml);
   });
 
-  it("should, when is mounted, disply the value of 0 ", () => {
+  it("should, when is mounted, display the value of 0 ", () => {
     //arrange
     const wrapper = shallowMount(CartCounter, {
       propsData: {
-        dogArray: [],
+        dogCart: [],
       },
     });
     const expected = "0";
+
     //act
     const counter = wrapper.find(".counter").text();
     const actual = counter;
+
     //assert
     expect(actual).toBe(expected);
   });
@@ -46,26 +49,40 @@ describe("CartCounter.vue", () => {
     const btnAdd = wrapper.find("button");
     await btnAdd.trigger("click");
 
-    //expect(productCard).toBe(true);
-    // expect(btnCard).toBe(true);
-
     // //assert
     expect(wrapper.emitted().addToCart).toBeTruthy();
   });
 
   it("should display the numbers of items bought in the cardCounter", async () => {
     const wrapper = shallowMount(CartCounter, {
-      propsData: {
-        dogArray: fakeData(),
-      },
-    });
-    const expectedArrayLength = 1
+			props: {
+				cartItems: [
+				{
+					"name": "Molly",
+					"sex": "female",
+					"breed": "briard",
+					"img": "https://images.dog.ceo/breeds/briard/n02105251_6840.jpg",
+					"present": false,
+					"age": 4,
+					"chipNumber": "IEH455006",
+					"price": 10000,
+					"owner": {
+						"name": "Wilmer",
+						"lastName": "Svensson",
+						"phoneNumber": "0769239356"
+					}
+				}],
+			},
+      });
+    
+    const expected = "1"
 
-    // Act
-    const actualItems = fakeData().length;
+		// act 
+    const actualCartOrder = wrapper.find(".counter").text()
+    console.log("actual", actualCartOrder)
 
     // Assert
-    expect(actualItems).toBe(expectedArrayLength);
+    expect(actualCartOrder).toBe(expected)
   });
 });
 
