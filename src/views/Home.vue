@@ -29,7 +29,7 @@ export default {
   props: {
     cartItems: Array,
     dogs: Array,
-    cartItems: Array,
+    dog: Object,
   },
   
   methods:{
