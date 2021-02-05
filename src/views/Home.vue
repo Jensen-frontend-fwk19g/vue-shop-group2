@@ -2,7 +2,7 @@
   <div class="home">
 
 
-    <CartCounter  :dogArray="dogArray" />
+    <CartCounter :cartItems="cartItems" />
     <MainPage  @addToCart="listen" :dogs="dogs" msg="Welcome to Your Vue.js App"/>
 
    
@@ -27,8 +27,9 @@ export default {
     }
   },
   props: {
+    cartItems: Array,
     dogs: Array,
-    dog:Object,
+    dog: Object,
   },
   
   methods:{

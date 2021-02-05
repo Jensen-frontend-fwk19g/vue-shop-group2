@@ -1,4 +1,5 @@
 import { shallowMount, mount } from "@vue/test-utils";
+import {fakeData} from "./fakeData"
 import Product from "@/components/ProductCard.vue";
 import MainPage from "@/components/MainPage.vue";
 
@@ -7,30 +8,28 @@ describe("ProductCard.vue", () => {
     // arrange
     const wrapper = await shallowMount(Product, {
       propsData: {
-        dog: {
-          name: "Molly",
-        },
-      },
+        dog: fakeData()
+      }
     });
-    const expected = "Molly";
+    console.log(fakeData())
+    const expected = "DOGE";
     // act
     const actual = await wrapper.find(".dog-name");
     const actualText = await actual.text();
 
     // assert
     expect(actualText).toMatch(expected);
+    console.log(actualText)
   });
 
   it("it should display a age", async () => {
     // arrange
     const wrapper = await shallowMount(Product, {
       propsData: {
-        dog: {
-          age: 10,
-        },
-      },
+        dog: fakeData()
+      }
     });
-    const expected = "10";
+    const expected = "4";
     // act
     const actual = await wrapper.find(".dog-age");
     const actualText = await actual.text();
@@ -43,12 +42,10 @@ describe("ProductCard.vue", () => {
     // arrange
     const wrapper = await shallowMount(Product, {
       propsData: {
-        dog: {
-          breed: "WrongBreed",
-        },
-      },
+        dog: fakeData()
+      }
     });
-    const expected = "WrongBreed";
+    const expected = "Shiba Inu";
     // act
     const actual = await wrapper.find(".dog-breed");
     const actualText = await actual.text();
@@ -61,12 +58,10 @@ describe("ProductCard.vue", () => {
     // arrange
     const wrapper = await shallowMount(Product, {
       propsData: {
-        dog: {
-          sex: "female",
-        },
-      },
+        dog: fakeData()
+      }
     });
-    const expected = "female";
+    const expected = "unknown";
     // act
     const actual = await wrapper.find(".dog-sex");
     const actualText = await actual.text();
@@ -79,31 +74,10 @@ describe("ProductCard.vue", () => {
     // arrange
     const wrapper = await shallowMount(Product, {
       propsData: {
-        dog: {
-          img: "https://images.dog.ceo/breeds/briard/n02105251_6840.jpg",
-        },
-      },
+        dog: fakeData()
+      }
     });
-    const expected = "https://images.dog.ceo/breeds/briard/n02105251_6840.jpg";
-    // act
-    const actual = await wrapper.find(".dog-image");
-
-    // assert
-    expect(actual.attributes("src")).toBe(expected);
-  });
-
-  //assert
-
-  it("should display a image", async () => {
-    // arrange
-    const wrapper = await shallowMount(Product, {
-      propsData: {
-        dog: {
-          img: "https://images.dog.ceo/breeds/briard/n02105251_6840.jpg",
-        },
-      },
-    });
-    const expected = "https://images.dog.ceo/breeds/briard/n02105251_6840.jpg";
+    const expected = "https://static.wikia.nocookie.net/dogelore/images/9/97/Doge.jpg";
     // act
     const actual = await wrapper.find(".dog-image");
 
@@ -114,10 +88,8 @@ describe("ProductCard.vue", () => {
   it("should display price with a font css class", async () => {
     const wrapper = await shallowMount(Product, {
       propsData: {
-        dog: {
-          price: 1337,
-        },
-      },
+        dog: fakeData()
+      }
     });
     // takes the price element
     const actual = wrapper.find(".dog-price");
@@ -133,13 +105,12 @@ it("should emit the dog chosen ", async () => {
 
   const wrapper = mount(MainPage);
   // //act
-  wrapper.vm.$emit("dogToEmit");
-  wrapper.vm.$emit("dogToEmit", "Molly");
+  wrapper.vm.$emit("addToCart");
+  wrapper.vm.$emit("addToCart", "Molly");
 
   await wrapper.vm.$nextTick();
   await wrapper.vm.$nextTick();
   // //assert
-
-  expect(wrapper.emitted().dogToEmit).toBeTruthy();
-  expect(wrapper.emitted().dogToEmit[1][0]).toEqual("Molly");
+  expect(wrapper.emitted().addToCart).toBeTruthy();
+  expect(wrapper.emitted().addToCart[1][0]).toEqual("Molly");
 });

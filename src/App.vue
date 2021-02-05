@@ -4,7 +4,9 @@
     <router-link to="/">Home</router-link> |
     <router-link to="/about">Cart</router-link> |
     <router-link to="/facilities">Facility</router-link>
-    <router-view @addToCart="addToCart" :dogs="dogs" :cartItems="cartItems" />
+
+    <router-view @addToCart="addToCart" @removeDog="removeFromCart" :dogs="dogs" :cartItems="cartItems" />
+
   </div>
 </template>
 
@@ -26,12 +28,18 @@ export default {
     addToCart(selectedDog) {
       this.cartItems.push(selectedDog);
     },
+    removeFromCart(dog)
+    {
+      this.cartItems = this.cartItems.filter(item => dog != item)
+      console.log('removeFromCart(dog)')
+      },
   },
 };
 </script>
 
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
+
 #app {
   font-family: "Lato", sans-serif;
   -webkit-font-smoothing: antialiased;

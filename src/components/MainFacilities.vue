@@ -104,7 +104,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 #info-service {
   max-width: 100vw;
   max-height: 100vh;

@@ -3,7 +3,7 @@
     <header>
       <h1>Cart Page you can find all the dogs you are going to pay</h1>
     </header>
-    <ShoppingCart :dogs="dogs" :cartItems="cartItems" />
+    <ShoppingCart @removeDog="removeFromCart" :dogs="dogs" :cartItems="cartItems" />
   </div>
 </template>
 <script>
@@ -18,5 +18,13 @@ export default {
     dogs: Array,
     cartItems: Array,
   },
+  methods: { 
+    removeFromCart(dog) {
+      this.$emit("removeDog", dog);
+    }
+
+  },
+emits: ["removeDog"]
 };
+
 </script>
