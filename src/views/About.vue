@@ -4,7 +4,6 @@
       <h1>Cart Page you can find all the dogs you are going to pay</h1>
     </header>
     <ShoppingCart :dogs="dogs" :cartItems="cartItems" />
-    <TotalSum :dogs="dogs" />
   </div>
 </template>
 <script>
