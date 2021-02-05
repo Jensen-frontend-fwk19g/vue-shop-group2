@@ -2,7 +2,7 @@
   <section id="counter-cart">
 
     <figure class="counter-container">
-      <div class="counter" v-if='cartItems'>{{numberOfDogs}}</div>
+      <div class="counter" v-if='cartItems'> {{numberOfDogs}} </div>
       <div class="counter" v-else> 0 </div>
       <img class="bag" src="@/assets/bag.png" alt="Cart">
     </figure>
@@ -12,6 +12,7 @@
 
 <script>
 export default {
+
   props: {
     cartItems: Array
   },

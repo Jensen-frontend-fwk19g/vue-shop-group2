@@ -2,6 +2,21 @@ import { shallowMount } from "@vue/test-utils";
 import CartCounter from "@/components/CartCounter.vue";
 import AddButton from "@/components/AddButton.vue";
 
+function fakeData() {
+  return [
+    {
+      name: "DOGE",
+      sex: "unknown",
+      breed: "Shiba Inu",
+      img: "https://static.wikia.nocookie.net/dogelore/images/9/97/Doge.jpg",
+      present: false,
+      age: 4,
+      chipNumber: "IEH1337",
+      price: 1337,
+    },
+  ];
+}
+
 describe("CartCounter.vue", () => {
   it("should display,when the page is mounted, the img of the bag inside the cart ", () => {
     //arrange
@@ -77,26 +92,10 @@ describe("CartCounter.vue", () => {
     
     const expected = "1"
 
-		// act 
+		// Act 
     const actualCartOrder = wrapper.find(".counter").text()
-    console.log("actual", actualCartOrder)
 
     // Assert
     expect(actualCartOrder).toBe(expected)
   });
 });
-
-function fakeData() {
-  return [
-    {
-      name: "DOGE",
-      sex: "unknown",
-      breed: "Shiba Inu",
-      img: "https://static.wikia.nocookie.net/dogelore/images/9/97/Doge.jpg",
-      present: false,
-      age: 4,
-      chipNumber: "IEH1337",
-      price: 1337,
-    },
-  ];
-}
